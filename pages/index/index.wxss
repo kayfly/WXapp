@@ -1,0 +1,82 @@
+/**index.wxss**/
+page {
+    margin: auto;
+}
+.container {
+    
+    widows: 100%;
+    height: 100vh;
+    z-index: 5;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 300px;
+}
+
+.page-title {
+    margin: auto;
+    width: 714rpx;
+    height: 170rpx;
+    border-bottom: 1px solid #edecee;
+}
+
+.page-title__title {
+    float: right;
+    font-size: 32rpx;
+    line-height: 93rpx;
+}
+
+.page-hd {
+    text-align: center;
+    margin: auto;
+    margin-top: 46rpx;
+    width: 290rpx;
+    height: 402rpx;
+    border: 1px solid #edecee;
+    border-radius: 15rpx;
+    background: white;
+}
+
+.page-bd__choose {
+    margin: auto;
+    text-align: center;
+    margin-top: 30rpx;
+    width: 714rpx;
+    display: grid;
+    -ms-grid-template-columns: repeat(4,1fr);
+    -ms-grid-template-rows: repeat(2,67rpx);
+    -ms-grid-gap: 18rpx;
+    -moz-grid-template-columns: repeat(4,1fr);
+    -moz-grid-template-rows: repeat(2,67rpx);
+    -moz-grid-gap: 18rpx;
+    -webkit-grid-template-columns: repeat(4,1fr);
+    -webkit-grid-template-rows: repeat(2,67rpx);
+    -webkit-grid-gap: 18rpx;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,67rpx);
+    grid-gap: 18rpx;
+}
+
+.page-bd__choosebtn {
+    border: 1px solid #a2a3a7;
+    border-radius: 33rpx;
+    line-height: 67rpx;
+    color: #a2a3a7;
+    font-size: 26rpx;
+}

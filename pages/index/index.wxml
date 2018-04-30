@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page-title">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </block>
+  </view>
+  </view>
+  <view class="page-title__title">Hi，{{userInfo.nickName}}，又是新的一周</view> 
+  <view>今天是{{time}}，读了几页书呢？</view> 
+  <view class="page-bd">
+  <view class="page-bd__choose">
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput1" type="string" placeholder="阅读数量" value="{{read1}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput2" type="string" placeholder="阅读数量" value="{{read2}}"/></view> 
+  </view> 
+  </view> 
+  <view bindtap="statisticalData">完成</view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
