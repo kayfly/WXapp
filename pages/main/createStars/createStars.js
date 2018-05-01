@@ -6,8 +6,10 @@ Page({
    */
   data: {
     starname:'',
+    rhesis:'',
     starpic: '../../../images/stars1.png',
     type:0,
+    introduction:'',
     info:[],
     activeIndex: 1,
     display: false,
@@ -35,7 +37,7 @@ Page({
     textcolor8:'#a2a3a7'
   },
   /**
-   * 选择图片
+   * 选择图片 打开遮罩层
    */
   chooseImage: function(event){
     this.setData({
@@ -51,25 +53,19 @@ Page({
     });
   },
   /**
-   * 输入星球名字
+   * 输入书名
    */
   bindStarNameInput:function(e) {
-    /**
-     * key->date
-     * data->{
-     * bookname:e.detail.value,
-     * bookflag:xxxxxx
-     * }
-     */
-    //date time js获取
-    wx.setStorageSync("book20180422", [
-      {bookname:"河上一周",bookflag:['好看']}
-    ])
-    /**
-     * wx.setStorageSync("count20180422", 1)
-     */
     this.setData({
       starname: e.detail.value,
+    });
+  },
+  /**
+   * 输入记录的名句
+   */
+  bindRhesisInput:function(e) {
+    this.setData({
+      rhesis: e.detail.value,
     });
   },
   /**
@@ -179,6 +175,7 @@ Page({
       color2: '#14b392',
       textcolor2: '#fff',
       starName:'',
+      rhesis:'',
       color1:'#f5f6f8',
       textcolor1:'#a2a3a7',
       color3:'#f5f6f8',
@@ -202,6 +199,7 @@ Page({
       color3: '#14b392',
       textcolor3: '#fff',
       starName:'',
+      rhesis:'',
       color1:'#f5f6f8',
       textcolor1:'#a2a3a7',
       color2:'#f5f6f8',
@@ -225,6 +223,7 @@ Page({
       color4: '#14b392',
       textcolor4: '#fff',
       starName:'',
+      rhesis:'',
       color1:'#f5f6f8',
       textcolor1:'#a2a3a7',
       color2:'#f5f6f8',
@@ -248,6 +247,7 @@ Page({
       color5: '#14b392',
       textcolor5: '#fff',
       starName:'',
+      rhesis:'',
       color1:'#f5f6f8',
       textcolor1:'#a2a3a7',
       color2:'#f5f6f8',
@@ -271,6 +271,7 @@ Page({
       color6: '#14b392',
       textcolor6: '#fff',
       starName:'',
+      rhesis:'',
       color1:'#f5f6f8',
       textcolor1:'#a2a3a7',
       color2:'#f5f6f8',
@@ -294,6 +295,7 @@ Page({
       color7: '#14b392',
       textcolor7: '#fff',
       starName:'',
+      rhesis:'',
       color1:'#f5f6f8',
       textcolor1:'#a2a3a7',
       color2:'#f5f6f8',
@@ -317,6 +319,7 @@ Page({
       color8: '#14b392',
       textcolor8: '#fff',
       starName:'',
+      rhesis:'',
       color1:'#f5f6f8',
       textcolor1:'#a2a3a7',
       color2:'#f5f6f8',
@@ -350,11 +353,19 @@ Page({
         showCancel: false, //不显示取消按钮
         confirmText: '确定'
       })
-    }else {
+    } else if (this.data.rhesis == 0){
+      wx.showModal({
+        content: '请输入名言',
+        showCancel: false, //不显示取消按钮
+        confirmText: '确定'
+      })
+    }
+    else {
       var newinfo = [{}];
       newinfo[0].starName = this.data.starname;
       newinfo[0].starpic = this.data.starpic;
       newinfo[0].type = this.data.type;
+      newinfo[0].rhesis = this.data.rhesis;
       this.data.info = newinfo.concat(this.data.info);
       wx.setStorage({
         key: 'info',

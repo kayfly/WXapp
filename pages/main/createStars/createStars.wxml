@@ -3,7 +3,6 @@
     <view class="backitem">
         <image bindtap="pic1" class="backitem1" src="../../../images/stars1.png" />
         <image wx:if="{{show1}}" class="{{activeIndex==1?'active':''}}" src="../../../images/this.png"/>
-
         <image bindtap="pic2" class="backitem1" src="../../../images/stars2.png" />
         <image wx:if="{{show2}}" class="{{activeIndex==2?'active':''}}" src="../../../images/this.png"/>
         <image bindtap="pic3" class="backitem1" src="../../../images/stars3.png" />
@@ -24,7 +23,8 @@
     <view class="page-hd">
         <view class="page-hd__star" bindtap="chooseImage"><image src="{{starpic}}"/></view>
         <view class="page-hd__text">
-        <input class="input" bindinput="bindStarNameInput" type="text" placeholder="星球名字" value="{{starName}}"/></view>
+        <input class="input" bindinput="bindStarNameInput" type="text" placeholder="星球名字" value="{{starName}}"/>
+        </view>
     </view>
     <view class="page-bd">
         <view class="page-bd__text">选择所属星球类别(必选)</view>
@@ -40,6 +40,6 @@
         </view>
     </view>
     <view class="page-ft">
-        <input type="text" placeholder="星球简介(选填)"/>
+        <input class="input" bindinput="bindRhesisInput" type="text" placeholder="星球简介(选填)" value="{{rhesis}}"/>
     </view>
 </view>

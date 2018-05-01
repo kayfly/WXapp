@@ -12,8 +12,41 @@
   <view>今天是{{time}}，读了几页书呢？</view> 
   <view class="page-bd">
   <view class="page-bd__choose">
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput1" type="string" placeholder="阅读数量" value="{{read1}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput2" type="string" placeholder="阅读数量" value="{{read2}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput1" type="string" placeholder="Day1" value="{{read1}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput2" type="string" placeholder="Day2" value="{{read2}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput3" type="string" placeholder="Day3" value="{{read3}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput4" type="string" placeholder="Day4" value="{{read4}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput5" type="string" placeholder="Day5" value="{{read5}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput6" type="string" placeholder="Day6" value="{{read6}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput7" type="string" placeholder="Day7" value="{{read7}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput8" type="string" placeholder="Day8" value="{{read8}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput9" type="string" placeholder="Day9" value="{{read9}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput10" type="string" placeholder="Day10" value="{{read10}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput11" type="string" placeholder="Day11" value="{{read11}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput12" type="string" placeholder="Day12" value="{{read12}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput13" type="string" placeholder="Day13" value="{{read13}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput14" type="string" placeholder="Day14" value="{{read14}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput15" type="string" placeholder="Day15" value="{{read15}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput16" type="string" placeholder="Day16" value="{{read16}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput17" type="string" placeholder="Day17" value="{{read17}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput18" type="string" placeholder="Day18" value="{{read18}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput19" type="string" placeholder="Day19" value="{{read19}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput20" type="string" placeholder="Day20" value="{{read20}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput21" type="string" placeholder="Day21" value="{{read21}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput22" type="string" placeholder="Day22" value="{{read22}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput23" type="string" placeholder="Day23" value="{{read23}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput24" type="string" placeholder="Day24" value="{{read24}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput25" type="string" placeholder="Day25" value="{{read25}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput26" type="string" placeholder="Day26" value="{{read26}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput27" type="string" placeholder="Day27" value="{{read27}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput28" type="string" placeholder="Day28" value="{{read28}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput29" type="string" placeholder="Day29" value="{{read29}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput30" type="string" placeholder="Day30" value="{{read30}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput31" type="string" placeholder="Day31" value="{{read31}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput32" type="string" placeholder="Day32" value="{{read32}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput33" type="string" placeholder="Day33" value="{{read33}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput34" type="string" placeholder="Day34" value="{{read34}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput35" type="string" placeholder="Day35" value="{{read35}}"/></view> 
   </view> 
   </view> 
   <view bindtap="statisticalData">完成</view>

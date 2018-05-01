@@ -14,6 +14,14 @@ Page({
 
   },
 
+  onTap(){
+    wx.showModal({
+      content: '请输入名言',
+      showCancel: false, //不显示取消按钮
+      confirmText: '确定'
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

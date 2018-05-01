@@ -9,9 +9,41 @@ var time = util.formatTime(new Date());
 Page({
   data: {
     readamount: [],
-    read1: "第一天",
-    read2: "第二天",
-    read3: 0,
+    read1: " ",
+    read2: "",
+    read3: "",
+    read4: "",
+    read5: "",
+    read6: "",
+    read7: "",
+    read8: "",
+    read9: "",
+    read10: "",
+    read11: "",
+    read12: "",
+    read13: "",
+    read14: "",
+    read15: "",
+    read16: "",
+    read17: "",
+    read18: "",
+    read19: "",
+    read20: "",
+    read21: "",
+    read22: "",
+    read23: "",
+    read24: "",
+    read25: "",
+    read26: "",
+    read27: "",
+    read28: "",
+    read29: "",
+    read30: "",
+    read31: "",
+    read32: "",
+    read33: "",
+    read34: "",
+    read35: "",
     motto: 'Hello',
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -33,10 +65,178 @@ Page({
       read2: e.detail.value,
     });
   },
-
   bindReadamountInput3: function (e) {
     this.setData({
       read3: e.detail.value,
+    });
+  },
+  bindReadamountInput4: function (e) {
+    this.setData({
+      read4: e.detail.value,
+    });
+  },
+  bindReadamountInput5: function (e) {
+    this.setData({
+      read5: e.detail.value,
+    });
+  },
+
+  bindReadamountInput6: function (e) {
+    this.setData({
+      read6: e.detail.value,
+    });
+  },
+  bindReadamountInput7: function (e) {
+    this.setData({
+      read7: e.detail.value,
+    });
+  },
+  bindReadamountInput8: function (e) {
+    this.setData({
+      read8: e.detail.value,
+    });
+  },
+ 
+  bindReadamountInput9: function (e) {
+    this.setData({
+      read9: e.detail.value,
+    });
+  },
+  bindReadamountInput10: function (e) {
+    this.setData({
+      read10: e.detail.value,
+    });
+  },
+
+  bindReadamountInput11: function (e) {
+    this.setData({
+      read11: e.detail.value,
+    });
+  },
+  bindReadamountInput12: function (e) {
+    this.setData({
+      read12: e.detail.value,
+    });
+  },
+  bindReadamountInput13: function (e) {
+    this.setData({
+      read13: e.detail.value,
+    });
+  },
+  bindReadamountInput14: function (e) {
+    this.setData({
+      read14: e.detail.value,
+    });
+  },
+
+  bindReadamountInput15: function (e) {
+    this.setData({
+      read15: e.detail.value,
+    });
+  },
+  bindReadamountInput16: function (e) {
+    this.setData({
+      read16: e.detail.value,
+    });
+  },
+  bindReadamountInput17: function (e) {
+    this.setData({
+      read17: e.detail.value,
+    });
+  },
+  bindReadamountInput18: function (e) {
+    this.setData({
+      read18: e.detail.value,
+    });
+  },
+
+  bindReadamountInput19: function (e) {
+    this.setData({
+      read19: e.detail.value,
+    });
+  },
+  bindReadamountInput20: function (e) {
+    this.setData({
+      read20: e.detail.value,
+    });
+  },
+  bindReadamountInput21: function (e) {
+    this.setData({
+      read21: e.detail.value,
+    });
+  },
+  bindReadamountInput22: function (e) {
+    this.setData({
+      read22: e.detail.value,
+    });
+  },
+
+  bindReadamountInput23: function (e) {
+    this.setData({
+      read23: e.detail.value,
+    });
+  },
+  bindReadamountInput24: function (e) {
+    this.setData({
+      read24: e.detail.value,
+    });
+  },
+  bindReadamountInput25: function (e) {
+    this.setData({
+      read25: e.detail.value,
+    });
+  },
+ 
+  bindReadamountInput26: function (e) {
+    this.setData({
+      read26: e.detail.value,
+    });
+  },
+  bindReadamountInput27: function (e) {
+    this.setData({
+      read27: e.detail.value,
+    });
+  },
+  bindReadamountInput28: function (e) {
+    this.setData({
+      read28: e.detail.value,
+    });
+  },
+
+  bindReadamountInput29: function (e) {
+    this.setData({
+      read29: e.detail.value,
+    });
+  },
+  bindReadamountInput30: function (e) {
+    this.setData({
+      read30: e.detail.value,
+    });
+  },
+  bindReadamountInput31: function (e) {
+    this.setData({
+      read31: e.detail.value,
+    });
+  },
+  bindReadamountInput32: function (e) {
+    this.setData({
+      read32: e.detail.value,
+    });
+  },
+
+  bindReadamountInput33: function (e) {
+    this.setData({
+      read33: e.detail.value,
+    });
+  },
+  bindReadamountInput34: function (e) {
+    this.setData({
+      read34: e.detail.value,
+    });
+  },
+  bindReadamountInput35: function (e) {
+    this.setData({
+      read35: e.detail.value,
     });
   },
  
@@ -96,8 +296,47 @@ Page({
         [6, 0, 6], [6, 1, 5], [6, 2, 3], [6, 3, 1], [6, 4, 2]
       ]
     };
+    //第一周
       model.data[0][2] = this.data.read1;
-      model.data[1][2] = this.data.read2;
+      model.data[5][2] = this.data.read2;
+      model.data[10][2] = this.data.read3;
+      model.data[15][2] = this.data.read4;
+      model.data[20][2] = this.data.read5;
+      model.data[25][2] = this.data.read6;
+      model.data[30][2] = this.data.read7;
+    //第二周
+      model.data[1][2] = this.data.read8;
+      model.data[6][2] = this.data.read9;
+      model.data[11][2] = this.data.read10;
+      model.data[16][2] = this.data.read11;
+      model.data[21][2] = this.data.read12;
+      model.data[26][2] = this.data.read13;
+      model.data[31][2] = this.data.read14;
+    //第三周
+    model.data[2][2] = this.data.read15;
+    model.data[7][2] = this.data.read16;
+    model.data[12][2] = this.data.read17;
+    model.data[17][2] = this.data.read18;
+    model.data[22][2] = this.data.read19;
+    model.data[27][2] = this.data.read20;
+    model.data[32][2] = this.data.read21;
+    //第四周
+    model.data[3][2] = this.data.read22;
+    model.data[8][2] = this.data.read23;
+    model.data[13][2] = this.data.read24;
+    model.data[18][2] = this.data.read25;
+    model.data[23][2] = this.data.read26;
+    model.data[28][2] = this.data.read27;
+    model.data[33][2] = this.data.read28;
+    //第五周
+    model.data[4][2] = this.data.read29;
+    model.data[9][2] = this.data.read30;
+    model.data[14][2] = this.data.read31;
+    model.data[19][2] = this.data.read32;
+    model.data[24][2] = this.data.read33;
+    model.data[29][2] = this.data.read34;
+    model.data[34][2] = this.data.read35;
+    
       this.data.readamount = model.data;
       wx.setStorage({
       key: 'readamount',

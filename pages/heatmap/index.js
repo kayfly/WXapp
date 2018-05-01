@@ -28,13 +28,6 @@ function initChart(canvas, width, height) {
   };
   
   model.data=(wx.getStorageSync("readamount"))
-  let exe_time=new Date()
-  console.log(exe_time.getTime())
-  /*model.data[1][2] = (wx.getStorage({
-    key: 'readamount',
-    success: function(res) {},
-}))  */
-
   const data = model.data.map(function (item) {
     return [item[1], item[0], item[2] || '-'];
   });

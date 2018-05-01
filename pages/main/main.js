@@ -6,35 +6,7 @@ Page({
     showView:0,
     display:false
   },
-  /**
-   * 获取星球信息
-   */
-  getStarsInfo: function(type) {
-    var that = this;
-    wx.request({
-      url:'https://www.easy-mock.com/mock/5a236208e27b936ea88bdb14/starsdata/getUserInfo#!method=get',
-      method:'GET',
-      data:{
-         type: type
-      },
-      success: function(res){
-       var data = res.data.data[app.data.currentUser];
-        that.setData({
-          stars: data.stars
-        });
-        
-      }
-    });
 
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  this.getStarsInfo('');
-  
-
-  },
 
   /**
    * 跳转到 创建星球页面
@@ -64,7 +36,7 @@ Page({
     }
   
   },
-
+  
   /**
    * 生命周期函数--监听页面显示
    */
@@ -83,5 +55,6 @@ Page({
         display:true  
       });
     }
-  }
+  },
+
 })
