@@ -113,8 +113,8 @@ Page({
       onInit: initChart
     }
   },
-
-  onTap(){
+  //不需要onTap，onShow页面每次加载都会执行
+  onShow(){
     initChart(GLOBAL_CHART[0],GLOBAL_CHART[1],GLOBAL_CHART[2])
     console.log('点击事件')
   },

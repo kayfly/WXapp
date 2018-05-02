@@ -3,7 +3,7 @@
     <view class="page__hd center">
         <navigator>
             <view class="page__hd_search center">
-                <image src="../../images/search.png" />
+                <image src="../../images/search.png"/>
                 搜索星球或内容
             </view>
         </navigator>
@@ -11,15 +11,14 @@
     <view class="page__bd">
         <block wx:if="{{display}}" wx:for="{{newstars}}" wx:key="{{index}}">
             <view class="page_bd_stars">
-                <image src="{{item.starpic}}"></image>
+                <image src="../../../images/{{item.starpic}}"></image>
                 <view class="page_bd_starsName">{{item.starName}}</view>
                 <view class="page_bd_starsUser">{{item.type}}</view>
             </view>
         </block>
         <block wx:for="{{stars}}" wx:key="{{index}}"><template is="stars_list" data="{{...item}}"/></block>
         <view class="page__bd-create" bindtap="toCreateStar">  
-            <view class="page__bd-create-text">创建星球</view>
-        </view>
-        
+            <view class="page__bd-create-text">今日心情</view>
+        </view>    
     </view>
 </view>
