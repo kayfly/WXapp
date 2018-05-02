@@ -14,6 +14,7 @@
                 <image src="../../../images/{{item.starpic}}"></image>
                 <view class="page_bd_starsName">{{item.starName}}</view>
                 <view class="page_bd_starsUser">{{item.type}}</view>
+                <view class="page_bd_starsName">{{item.rhesis}}</view>
             </view>
         </block>
         <block wx:for="{{stars}}" wx:key="{{index}}"><template is="stars_list" data="{{...item}}"/></block>

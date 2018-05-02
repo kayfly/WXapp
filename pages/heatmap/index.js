@@ -26,7 +26,6 @@ function initChart(canvas, width, height) {
       [6, 0, 6], [6, 1, 5], [6, 2, 3], [6, 3, 1], [6, 4, 2]
     ]
   };
-  
   model.data=(wx.getStorageSync("readamount"))
   const data = model.data.map(function (item) {
     return [item[1], item[0], item[2] || '-'];
@@ -113,10 +112,9 @@ Page({
       onInit: initChart
     }
   },
-  //不需要onTap，onShow页面每次加载都会执行
+
   onShow(){
     initChart(GLOBAL_CHART[0],GLOBAL_CHART[1],GLOBAL_CHART[2])
-    console.log('点击事件')
   },
   onReady() {
   }

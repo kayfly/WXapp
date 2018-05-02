@@ -9,7 +9,7 @@ var time = util.formatTime(new Date());
 Page({
   data: {
     readamount: [],
-    read1: " ",
+    read1: "0",
     read2: "",
     read3: "",
     read4: "",
@@ -340,12 +340,23 @@ Page({
       this.data.readamount = model.data;
       wx.setStorage({
       key: 'readamount',
-      
       data: this.data.readamount,
       success: function () {
-        wx.switchTab({
-          url: '../heatmap/index'
+        wx.showModal({
+          title: '提示',
+          content: '图表已生成，快去看看吧！',
+          success:function(res){
+            if(res.confirm){
+              wx.switchTab({
+                url: '../heatmap/index'
+              });
+            }else if(res.cancle){
+              console.log('留在此页面')
+            }
+          }
+
         });
+        
       }
     })
   },

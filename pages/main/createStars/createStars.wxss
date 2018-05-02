@@ -39,8 +39,8 @@ page {
 .page-hd__star image{
     margin: auto;
     border-radius: 15rpx;
-    width: 290rpx;
-    height: 292rpx;
+    width: 70rpx;
+    height: 70rpx;
 }
 .page-hd__text input{
     font-size: 32rpx;
@@ -98,12 +98,7 @@ page {
     border: 1px solid #edecee;
     border-radius: 15rpx;
 }
-.page-ft input {
-    font-size: 28rpx;
-    margin-top: 20rpx;
-    margin-left: 30rpx;
-    color: #a2a3a7;
-}
+
 .hiddenBack {
     position: absolute;
     z-index: 7;

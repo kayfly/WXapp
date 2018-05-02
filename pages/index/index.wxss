@@ -80,3 +80,7 @@ page {
     color: #a2a3a7;
     font-size: 26rpx;
 }
+
+.line {
+  border: 1px solid #cccccc
+}

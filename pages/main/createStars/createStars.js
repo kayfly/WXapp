@@ -7,7 +7,7 @@ Page({
   data: {
     starname:'',
     rhesis:'',
-    starpic: '../../../images/stars1.png',
+    starpic: '../../../images/mood1.png',
     type:0,
     introduction:'',
     info:[],
@@ -80,7 +80,7 @@ Page({
       show5:false,
       show6:false,
       activeIndex: 1,
-      starpic: '../../../images/stars1.png'
+      starpic: '../../../images/mood1.png'
     })
   },
   pic2: function(e) {
@@ -92,7 +92,7 @@ Page({
       show5:false,
       show6:false,
       activeIndex:2,
-      starpic: '../../../images/stars2.png'
+      starpic: '../../../images/mood2.png'
     })
   },
   pic3: function(e) {
@@ -104,7 +104,7 @@ Page({
       show5:false,
       show6:false,
       activeIndex:3,
-      starpic: '../../../images/stars3.png'
+      starpic: '../../../images/mood3.png'
     })
   },
   pic4: function(e) {
@@ -116,7 +116,7 @@ Page({
       show5:false,
       show6:false,
       activeIndex:4,
-      starpic: '../../../images/stars4.png'
+      starpic: '../../../images/mood4.png'
     })
   },
   pic5: function(e) {
@@ -128,7 +128,7 @@ Page({
       show1:false,
       show6:false,
       activeIndex:5,
-      starpic: '../../../images/stars5.png'
+      starpic: '../../../images/mood5.png'
     })
   },
   pic6: function(e) {
@@ -140,7 +140,7 @@ Page({
       show5:false,
       show1:false,
       activeIndex:6,
-      starpic: '../../../images/stars6.png'
+      starpic: '../../../images/mood6.png'
     })
   },
   /**
@@ -353,13 +353,7 @@ Page({
         showCancel: false, //不显示取消按钮
         confirmText: '确定'
       })
-    } else if (this.data.rhesis == 0){
-      wx.showModal({
-        content: '请输入名言',
-        showCancel: false, //不显示取消按钮
-        confirmText: '确定'
-      })
-    }
+    } 
     else {
       var newinfo = [{}];
       newinfo[0].starName = this.data.starname;
