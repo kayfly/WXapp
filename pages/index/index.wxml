@@ -1,15 +1,17 @@
 <!--index.wxml-->
+<view class="mpage {{!ui.tStart? 'withAnimate': ''}}" style="left:{{ui.offsetLeft}}px;width: {{ui.windowWidth}}px;" bindtouchstart="handlerStart" catchtouchmove="handlerMove"  bindtouchcancel="handlerCancel" bindtouchend="handlerEnd" bindtap="handlerPageTap">
+  <scroll-view bindscroll="" scroll-y style="height: 100%;">
 <view class="container">
-  <view class="page-title">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    </block>
-  </view>
-  </view>
-  <view class="page-title__title">Hi，{{userInfo.nickName}}，又是新的一周</view> 
-  <view>今天是{{time}}，读了几页书呢？</view> 
+  <view class="haibao">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:110px;">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    </view>
+  <view class="page-title__Hi">Hi，{{userInfo.nickName}}，今天是{{time}}，读了几页书呢？</view> 
   <view class="page-bd">
   <view class="page-bd__choose">
   <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput1" type="string" placeholder="Day1" value="{{read1}}"/></view> 
@@ -49,8 +51,76 @@
   <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput35" type="string" placeholder="Day35" value="{{read35}}"/></view> 
   </view> 
   </view> 
-  <view bindtap="statisticalData">完成</view>
+  <view class="finish" bindtap="statisticalData">完成</view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
+</scroll-view>
+</view>
+<!-- 侧滑栏 -->
+<view bindtouchstart="handlerStart" catchtouchmove="handlerMove" bindtouchcancel="handlerCancel" bindtouchend="handlerEnd" class="user" style="width: {{ui.menuWidth}}px">
+  <view style="width: {{ui.menuWidth}}px;left:{{-ui.menuWidth/3 + ui.offsetLeft/3}}px" class="user-box {{!ui.tStart? 'withAnimate': ''}}">
+    <view class="user-face-wrapper">
+      <image mode="aspectFill" src="/static/images/icon/backGround.png" style="height: 150px" class="loginbg"></image>
+
+      <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+    </block>
+     </view>
+    
+      <image class="user-face" src="{{userInfo.avatarUrl}}"></image>
+
+      <view class='user-info'>
+        <text>{{userInfo.nickName}}</text>
+        <image wx:if="{{userInfo.gender == 1}}" src="/static/images/m3.png"></image>
+        <image wx:if="{{userInfo.gender == 2}}" src="/static/images/w3.png"></image>
+        <image wx:if="{{userInfo.gender == 0 || userInfo.gender==''}}" src="/static/images/sex.png"></image>
+      </view>
+    </view>
+    <view style='background-color: #fff;' class='bottom-box'>
+      <view class="list-box">
+        <view class="icon-text">
+          <span>步数</span>
+        </view>
+        <text>2543</text>
+      </view>
+      <view class="list-box " bindtap=" ">
+        <view class="icon-text ">
+          <span>排名</span>
+        </view>
+        <text>21</text>
+      </view>
+    </view>
+    <view class="thirdblock" style='margin-top:80px;'>
+      <view class="itemself" bindtap="click_myLaunch" data-index="1">
+        <image src="/static/images/icon/times.png" class="itemself_ico"></image>
+        <span>我的发起</span>
+      </view>
+      <view class="itemself" bindtap="click_myJoin" data-index="2">
+        <image src="/static/images/icon/jssq.png" class="itemself_ico"></image>
+        <span>我的加入</span>
+      </view>
+      <view class="itemself" bindtap="click_myCollection" data-index="3">
+        <image src="/static/images/icon/status.png" class="itemself_ico"></image>
+        <span>我的收藏</span>
+      </view>
+      <view class="itemself" bindtap="click_projectBrief" data-index="4">
+        <image src="/static/images/icon/specialty.png" class="itemself_ico"></image>
+        <span>项目简介</span>
+      </view>
+      <view class="itemself" bindtap="click_Tick" data-index="5">
+        <image src="/static/images/icon/tick2.png " class="itemself_ico"></image>
+        <span>反馈建议</span>
+      </view>
+       <view class="itemself" bindtap="click_more" data-index="6">
+        <image src="/static/images/icon/plus.png " class="itemself_ico"></image>
+        <span>更多信息</span>
+      </view>
+    </view>
+    <view class="h10"></view>
+    <view class="h10"></view>
+
   </view>
 </view>

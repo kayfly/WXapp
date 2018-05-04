@@ -8,6 +8,8 @@
             </view>
         </navigator>
     </view>
+
+
     <view class="page__bd">
         <block wx:if="{{display}}" wx:for="{{newstars}}" wx:key="{{index}}">
             <view class="page_bd_stars">
@@ -15,8 +17,11 @@
                 <view class="page_bd_starsName">{{item.starName}}</view>
                 <view class="page_bd_starsUser">{{item.type}}</view>
                 <view class="page_bd_starsName">{{item.rhesis}}</view>
+                <text class="page_bd_starsName" catchtap="deleteDiary" data-array="{{newstars}}" data-index="{{index}}">删除</text>
             </view>
         </block>
+
+
         <block wx:for="{{stars}}" wx:key="{{index}}"><template is="stars_list" data="{{...item}}"/></block>
         <view class="page__bd-create" bindtap="toCreateStar">  
             <view class="page__bd-create-text">今日心情</view>

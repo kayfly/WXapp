@@ -39,8 +39,8 @@ page {
 .page-hd__star image{
     margin: auto;
     border-radius: 15rpx;
-    width: 70rpx;
-    height: 70rpx;
+    width: 260rpx;
+    height: 260rpx;
 }
 .page-hd__text input{
     font-size: 32rpx;

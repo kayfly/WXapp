@@ -339,6 +339,8 @@ Page({
   /**
    * 完成创建 跳转到主页面
    */
+  //toCancel: function
+
   toMain: function(e) {
     
     if(this.data.starName === "星球名字"){
