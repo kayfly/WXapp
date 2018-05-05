@@ -30,7 +30,7 @@ Page({
     ],
     readamount: [],
     read1: "0",
-    read2: "",
+    read2: "12",
     read3: "",
     read4: "",
     read5: "",
