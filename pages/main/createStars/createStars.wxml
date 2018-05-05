@@ -40,6 +40,6 @@
         </view>
     </view>
     <view class="page-ft">
-        <textarea bindinput="bindRhesisInput" type="text" placeholder="一句话描述一下今天心情吧" value="{{rhesis}}" auto-focus="true"/>
+        <input bindinput="bindRhesisInput" type="text" placeholder="一句话描述一下今天心情吧" value="{{rhesis}}"/>
     </view>
 </view>
