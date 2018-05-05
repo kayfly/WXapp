@@ -58,33 +58,38 @@ Page({
     }
   },
 
+/*
+删除日志的操作要注意，我们修改的数据不会马上渲染到页面，需要调用一下setDat()方发才能立即生效
 
+*/
     deleteDiary: function (e) {
-      //e.currentTarget.dataset.index
+      var that = this;
       console.log(e.currentTarget.dataset.index)
-    var that = this;
-    //getStorage  xxxx
-    //splice
-    //setStorage
-    wx.getStorage({
-      key: 'info',
-      success:function(res){
-        that.setData({
-          newstars:res.data
-        });
-      }
+      console.log(e)
+      var objectIndex = e.currentTarget.dataset.index;
+      var deleteDiary = e.currentTarget.dataset.array;
+      
+      deleteDiary.splice(objectIndex,1);
+      console.log(deleteDiary);
+      
+      wx.setStorage({
+        key: 'info',
+        data: deleteDiary,
+        success:function(res){
+          wx.getStorage({
+            key: 'info',
+            success:function(res){
+              that.setData({
+                newstars:res.data
+              });
+            }
+          });
+          if(that.data.newstars.length>0){
+            that.setData({
+              display:true  
+            });
+          }
+        },
     });
-
-
-    var newstars=that.data.newstars;
-    newstars.splice(0,newstars.length);
-    console.log(newstars);
-    if(that.data.newstars.length>0){
-      that.setData({
-        display:true  
-      });
-    }
   },
-  
-
 })
