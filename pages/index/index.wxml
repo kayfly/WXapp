@@ -11,8 +11,9 @@
       </block>
     </swiper>
     </view>
-  <view class="page-title__Hi">Hi，{{userInfo.nickName}}，今天是{{time}}，读了几页书呢？</view> 
-  <view class="page-bd">
+ 
+  <view class="page-hi">Hi，{{userInfo.nickName}}，今天是{{time}}，读了几页书呢？</view> 
+
   <view class="page-bd__choose">
   <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput1" type="string" placeholder="Day1" value="{{read1}}"/></view> 
   <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput2" type="string" placeholder="Day2" value="{{read2}}"/></view>
@@ -50,7 +51,7 @@
   <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput34" type="string" placeholder="Day34" value="{{read34}}"/></view>
   <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput35" type="string" placeholder="Day35" value="{{read35}}"/></view> 
   </view> 
-  </view> 
+
   <view class="finish" bindtap="statisticalData">完成</view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
@@ -58,6 +59,9 @@
 </view>
 </scroll-view>
 </view>
+
+
+
 <!-- 侧滑栏 -->
 <view bindtouchstart="handlerStart" catchtouchmove="handlerMove" bindtouchcancel="handlerCancel" bindtouchend="handlerEnd" class="user" style="width: {{ui.menuWidth}}px">
   <view style="width: {{ui.menuWidth}}px;left:{{-ui.menuWidth/3 + ui.offsetLeft/3}}px" class="user-box {{!ui.tStart? 'withAnimate': ''}}">

@@ -5,13 +5,14 @@ page {
 .container {
     
     widows: 100%;
-    height: 170vh;
+    height: 100%;
     z-index: 5;
+    background-color: ../../../images/Pic/UserPic2.jpeg;
 }
 
 .haibao{
     text-align: centor;
-    width: 100%;
+    width: 800rpx;
 }
 
 .slideimage{
@@ -27,34 +28,22 @@ page {
   margin-top: 300px;
 }
 
-.page-title {
-    margin: auto;
-    width: 714rpx;
-    height: 160rpx;
-    border-bottom: 1px solid #edecee;
-}
-
- .page-title__Hi {
-    float: right;
-    font-size: 32rpx;
-    line-height: 23rpx;
-}
-
-.page-hd {
+ .page-hi {
     text-align: center;
     margin: auto;
     margin-top: 6rpx;
-    width: 290rpx;
-    height: 402rpx;
-    border: 1px solid #edecee;
-    border-radius: 15rpx;
-    background: white;
+    float: right;
+    font-size: 48rpx;
+    width: 100%;
+    height: 502rpx;
+    background: #edecee;
 }
+
 
 .page-bd__choose {
     margin: auto;
     text-align: center;
-    margin-top: 1rpx;
+    margin-top: 33rpx;
     width: 714rpx;
     display: grid;
     grid-template-columns: repeat(5,1fr);
@@ -71,7 +60,7 @@ page {
 }
 
 .finish {
-    margin-top: 1rpx;
+    margin-top: 32rpx;
     border: 1px solid #a2a3a7;
     border-radius: 5rpx;
     line-height: 67rpx;
