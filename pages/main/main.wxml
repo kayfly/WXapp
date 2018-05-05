@@ -20,7 +20,7 @@
                     <view class="weui-search-bar__text">搜索</view>
             </label>
             </view>
-            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+<view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
         </view>
 
 
@@ -36,6 +36,17 @@
                 <view class="page_bd_starsUser">{{item.type}}</view>
                 <view class="page_bd_starsName">{{item.rhesis}}</view>
                 <text class="page_bd_starsName" catchtap="deleteDiary" data-array="{{newstars}}" data-index="{{index}}">删除</text>
+            </view>
+        </block>
+
+
+         <block wx:if="{{display2}}" wx:for="{{resultShow}}" wx:key="{{index}}">
+            <view class="page_bd_stars">
+                <image src="../../../images/{{item.starpic}}"></image>
+                <view class="page_bd_starsName">{{item.starName}}</view>
+                <view class="page_bd_starsUser">{{item.type}}</view>
+                <view class="page_bd_starsName">{{item.rhesis}}</view>
+                <text class="page_bd_starsName" catchtap="deleteDiary" data-array="{{resultShow}}" data-index="{{index}}">删除</text>
             </view>
         </block>
 

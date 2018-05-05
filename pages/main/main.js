@@ -4,8 +4,10 @@ Page({
   data: {
     stars:[],
     newstars:[],
+    resultShow:[],
     showView:0,
-    display:false
+    display:false,
+    display2:false
   },
   /**
    * 跳转到 创建星球页面
@@ -99,12 +101,14 @@ Page({
       inputShowed: true
     });
   },
-  hideInput: function () {
+  hideInput: function () {//像rpgmaker里的开关，搜索功能完成！今日ok！
     this.setData({
       inputVal: "",
-      inputShowed: false
+      inputShowed: false,
+      display2:false,
+      display:true 
     });
-    
+
   },
   clearInput: function () {
     this.setData({
@@ -114,12 +118,16 @@ Page({
   },
   inputTyping: function (e) {
     //搜索数据
+    var that = this;
     var keyWord =  e.detail.value;
     var array1 = e.currentTarget.dataset.array;
+    that.setData({
+      display:false 
+    });
     console.log(keyWord)
     console.log(array1)
-    console.log(array1[0].rhesis)
-    var result = new Array();
+    //console.log(array1[0].rhesis)
+    var result = [];
     /*
     1，获取到输入的值和返回的数组
     2，新建一个新的数组
@@ -132,11 +140,17 @@ Page({
      for(var i=0;i <array1.length;i++){
       if (keyWord === array1[i].rhesis){
         console.log("哈哈")
+        var resultList = array1[i];
+        result.push(resultList);//将查找到的数组推到查找结果的列表里面
+        console.log(result)
+        that.setData({
+          resultShow: result,
+          display2:true  
+        });
       }
+      
      }
    }
-    this.setData({
-      inputVal: e.detail.value
-    });
+  
   },
 })
