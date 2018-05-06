@@ -1,4 +1,9 @@
 //app.js
+
+var Bmob = require("utils/bmob.js");
+var common = require("utils/common.js");
+Bmob.initialize("39fe8f9af92830f3131e9ac9f4882173", "70bb5a80e2ebf39112bebaa6e006bc78");
+
 App({
   data: {
     currentUser: 0

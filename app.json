@@ -4,7 +4,8 @@
     "pages/main/main",
     "pages/main/createStars/createStars",
     "pages/logs/logs",
-    "pages/heatmap/index"
+    "booklist/list/list",
+    "booklist/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -32,7 +33,7 @@
         "text": "漂流轨迹"
       },
       {
-        "pagePath": "pages/heatmap/index",
+        "pagePath": "booklist/list/list",
         "iconPath": "imges/TabbarActrN.png",
         "selectedIconPath": "imges/TabbarActrS.png",
         "text": "仰望星空"

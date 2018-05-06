@@ -12,7 +12,7 @@
     </swiper>
     </view>
  
-  <view class="page-hi">Hi，{{userInfo.nickName}}，今天是{{time}}，读了几页书呢？</view> 
+  <view class="page-hi">Hi，{{userInfo.nickName}}，今天是{{time}}，ABCDEFG？</view> 
 
   <view class="page-bd__choose">
   <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput1" type="string" placeholder="Day1" value="{{read1}}"/></view> 
@@ -53,9 +53,6 @@
   </view> 
 
   <view class="finish" bindtap="statisticalData">完成</view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
 </view>
 </scroll-view>
 </view>

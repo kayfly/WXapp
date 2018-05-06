@@ -26,7 +26,7 @@ Page({
     interval:5000,
     duration:1000,
     imgUrls:[
-      "../../../images/Pic/UserPic2.jpeg"
+      "http://bmob-cdn-18766.b0.upaiyun.com/2018/05/05/e13ecae440f0df7980dca6e53dceec07.jpeg"
     ],
     readamount: [],
     read1: "0",
@@ -293,10 +293,6 @@ Page({
       })
     }
   },
-  welcomeDay: function(e){
-    
-  },
-  
   //点击完成时，传递并统计阅读数据
   
   statisticalData: function (e) {
