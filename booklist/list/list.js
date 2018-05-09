@@ -7,14 +7,6 @@ Page({
 		loadingTip: '上拉加载更多'
 	},
 	onLoad: function () {
-		// test
-		// wx.navigateTo({
-		// 	url: '../detail/detail?objectId=C8ZP999E'
-		// });
-		//. test
-		// wx.navigateTo({
-		// 	url: '../../video/detail/detail?objectId=7LxpEEEQ'
-		// });
 		that = this;
 		that.loadArticle();
 	},
@@ -49,6 +41,7 @@ Page({
 	showDetail: function (e) {
 		// 获取wxml元素绑定的index值
 		var index = e.currentTarget.dataset.index;
+		console.log( e.currentTarget.dataset)
 		// 取出objectId
 		var objectId = that.data.article_list[index].id;
 		// 跳转到详情页

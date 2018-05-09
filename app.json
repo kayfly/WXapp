@@ -2,41 +2,42 @@
   "pages":[
     "pages/index/index",
     "pages/main/main",
-    "pages/main/createStars/createStars",
+    "pages/main/moodDiary/diary",
     "pages/logs/logs",
     "booklist/list/list",
-    "booklist/detail/detail"
+    "booklist/detail/detail",
+    "pages/heatmap/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "backgroundColor": "#191970",
-    "navigationBarBackgroundColor": "#191970",
+    "backgroundColor": "#34C6CD",
+    "navigationBarBackgroundColor": "#34C6CD",
     "navigationBarTitleText": "河上一周",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {
-    "color": "#eeeeee",
-    "selectedColor": "#ffa589",
-    "backgroundColor": "#191970",
+    "color": "#bfbfbf",
+    "selectedColor": "#34C6CD",
+    "backgroundColor": "#EBF7F7",
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "iconPath": "imges/TabbarHomeN.png",
-        "selectedIconPath": "imges/TabbarHomeS.png",
-        "text": "一周读书"
+        "pagePath": "pages/main/main",
+        "iconPath": "images/bar/survey.png",
+        "selectedIconPath": "images/bar/surveyc.png",
+        "text": "心情小记"
       },
       {
-        "pagePath": "pages/main/main",
-        "iconPath": "imges/TabbarVideoN.png",
-        "selectedIconPath": "imges/TabbarVideoS.png",
-        "text": "漂流轨迹"
+        "pagePath": "pages/index/index",
+        "iconPath": "images/bar/calendar.png",
+        "selectedIconPath": "images/bar/calendarc.png",
+        "text": "河上一周"
       },
       {
         "pagePath": "booklist/list/list",
-        "iconPath": "imges/TabbarActrN.png",
-        "selectedIconPath": "imges/TabbarActrS.png",
-        "text": "仰望星空"
+        "iconPath": "images/bar/office.png",
+        "selectedIconPath": "images/bar/officec.png",
+        "text": "书海拾遗"
       }
     ]
   }

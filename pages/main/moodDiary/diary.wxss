@@ -24,7 +24,7 @@ page {
     line-height: 93rpx;
     font-size: 32rpx;
     text-indent: 170rpx;
-    color: #14b392;
+    color: #006064;
 }
 .page-hd {
     text-align: center;
@@ -36,7 +36,7 @@ page {
     border-radius: 15rpx;
     background: white;
 }
-.page-hd__star image{
+.page-hd__mood image{
     margin: auto;
     border-radius: 15rpx;
     width: 260rpx;
@@ -48,6 +48,7 @@ page {
     height: 90rpx;
     line-height: 90rpx;
     color: #a2a3a7;
+    overflow:hidden;  
 }
 .page-bd__text {
     margin-top: 20rpx;
@@ -82,11 +83,11 @@ page {
     font-size: 26rpx;
 }
 /* .page-bd__choosebtn:active {
-    background: #14b392;
+    background: #006064;
     color: white;
 } */
 /* .page-bd__choosebtn:hover {
-    background: #14b392;
+    background: #006064;
     color: white;
 } */
 .page-ft {

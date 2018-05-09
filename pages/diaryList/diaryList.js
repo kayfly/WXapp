@@ -1,4 +1,3 @@
-// pages/starsList/starsList.js
 Page({
 
   /**

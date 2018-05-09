@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+var Bmob = require('../../utils/bmob.js');
 var util = require('../../utils/util.js');//获取时间  
 var time = util.formatTime(new Date());
 const MENU_WIDTH_SCALE = 0.82;
@@ -8,9 +9,6 @@ const FAST_SPEED_SECOND = 300;
 const FAST_SPEED_DISTANCE = 5;
 const FAST_SPEED_EFF_Y = 50;
 
-//var YesterdayTime = util.formatYesterdayTime(new Date());//昨天
-// 再通过setData更改Page()里面的data，动态更新页面的数据
-//var pCardTime = YesterdayTime;
 Page({
   data: {
     dialog:false,
@@ -25,12 +23,11 @@ Page({
     autoplay:true,
     interval:5000,
     duration:1000,
-    imgUrls:[
-      "http://bmob-cdn-18766.b0.upaiyun.com/2018/05/05/e13ecae440f0df7980dca6e53dceec07.jpeg"
-    ],
+    article_list: [],
+    postsShowSwiperList: [], 
     readamount: [],
     read1: "0",
-    read2: "12",
+    read2: "",
     read3: "",
     read4: "",
     read5: "",
@@ -64,7 +61,6 @@ Page({
     read33: "",
     read34: "",
     read35: "",
-    motto: 'Hello',
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -75,224 +71,473 @@ Page({
     })
   },
   bindReadamountInput1: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read1: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read1: "",
+    })
+    } 
   },
 
   bindReadamountInput2: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read2: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read2: "",
+    })
+    } 
   },
   bindReadamountInput3: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read3: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read3: "",
+    })
+    } 
   },
   bindReadamountInput4: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read4: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read4: "",
+    })
+    } 
   },
   bindReadamountInput5: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read5: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read5: "",
+    })
+    } 
   },
 
   bindReadamountInput6: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read6: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read6: "",
+    })
+    } 
   },
   bindReadamountInput7: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read7: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read7: "",
+    })
+    } 
   },
   bindReadamountInput8: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read8: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read8: "",
+    })
+    } 
   },
  
   bindReadamountInput9: function (e) {
     this.setData({
       read9: e.detail.value,
-    });
+    });var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
+    this.setData({
+      read9: e.detail.value,
+    })
+  }else{
+    this.setData({
+      read9: "",
+    })
+    } 
   },
   bindReadamountInput10: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read10: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read10: "",
+    })
+    } 
   },
 
   bindReadamountInput11: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read11: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read11: "",
+    })
+    } 
   },
   bindReadamountInput12: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read12: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read12: "",
+    })
+    } 
   },
   bindReadamountInput13: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read13: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read13: "",
+    })
+    } 
   },
   bindReadamountInput14: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read14: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read14: "",
+    })
+    } 
   },
 
   bindReadamountInput15: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read15: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read15: "",
+    })
+    } 
   },
   bindReadamountInput16: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read16: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read16: "",
+    })
+    } 
   },
   bindReadamountInput17: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read17: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read17: "",
+    })
+    } 
   },
   bindReadamountInput18: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read18: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read18: "",
+    })
+    } 
   },
 
   bindReadamountInput19: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read19: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read19: "",
+    })
+    } 
   },
   bindReadamountInput20: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read20: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read20: "",
+    })
+    } 
   },
   bindReadamountInput21: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read21: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read21: "",
+    })
+    }
   },
   bindReadamountInput22: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read22: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read22: "",
+    })
+    }
   },
 
   bindReadamountInput23: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read23: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read23: "",
+    })
+    }
   },
   bindReadamountInput24: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read24: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read24: "",
+    })
+    }
   },
   bindReadamountInput25: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read25: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read25: "",
+    })
+    }
   },
  
   bindReadamountInput26: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read26: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read26: "",
+    })
+    }
   },
   bindReadamountInput27: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read27: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read27: "",
+    })
+    }
   },
   bindReadamountInput28: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read28: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read28: "",
+    })
+    }
   },
 
   bindReadamountInput29: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read29: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read29: "",
+    })
+    }
   },
   bindReadamountInput30: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read30: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read30: "",
+    })
+    }
   },
   bindReadamountInput31: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read31: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read31: "",
+    })
+    }
   },
   bindReadamountInput32: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read32: e.detail.value,
-    });
+    })
+  }else{
+    this.setData({
+      read32: "",
+    })
+    }
   },
 
   bindReadamountInput33: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
     this.setData({
       read33: e.detail.value,
-    });
-  },
-  bindReadamountInput34: function (e) {
+    })
+  }else{
     this.setData({
-      read34: e.detail.value,
-    });
-  },
-  bindReadamountInput35: function (e) {
-    this.setData({
-      read35: e.detail.value,
-    });
-  },
- 
-  onLoad: function () {
-     //获取时间
-   
-    this.setData({
-      time: time
-    });
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
+      read33: "",
+    })
     }
   },
+  bindReadamountInput34: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
+    this.setData({
+      read34: e.detail.value,
+    })
+  }else{
+    this.setData({
+      read34: "",
+    })
+    }
+  },
+  bindReadamountInput35: function (e) {
+    var regNum=new RegExp('[0-9]','g');
+    var rsNum=regNum.exec(e.detail.value);
+    if(rsNum) {
+    this.setData({
+      read35: e.detail.value,
+    })
+  }else{
+    this.setData({
+      read35: "",
+    })
+    }
+  },
+ 
   //点击完成时，传递并统计阅读数据
   
   statisticalData: function (e) {
@@ -363,20 +608,62 @@ Page({
           content: '图表已生成，快去看看吧！',
           success:function(res){
             if(res.confirm){
-              wx.switchTab({
+              wx.navigateTo({
                 url: '../heatmap/index'
               });
             }else if(res.cancle){
               console.log('留在此页面')
-            }
-          }
-
+            } }
         });
-        
       }
     })
   },
-
+  //获取最新的三篇文章
+  fetchNewThreeArticle: function(){
+    var self = this;
+    var molist = new Array();
+    var Article = Bmob.Object.extend("article");
+		var query = new Bmob.Query(Article);
+    query.descending('priority');
+    query.limit(3);
+    query.find({
+      success: function (results) {
+        for (var i = 0; i < results.length; i++) {
+          var _url
+          var actpic = results[i].get("picture");
+          if(actpic){
+            _url = results[i].get("picture");
+          }else {
+            _url = "http://bmob-cdn-18766.b0.upaiyun.com/2018/05/08/67222884409dba5e80ce842f58bab073.jpg";
+          }
+          var jsonA;
+          jsonA = {
+            "actPic": _url || ''
+          }
+          molist.push(jsonA);
+        }
+        self.setData({
+          postsShowSwiperList: molist,
+          article_list: self.data.article_list.concat(results)
+        }) //加载首页信息
+      },
+      error: function (error) {
+        console.log(error)
+      }
+    })
+  },
+  showDetail: function (e) {
+      var self = this;
+      var index = e.currentTarget.dataset.index;
+      console.log( e.currentTarget.dataset)
+      console.log(self.data.article_list)
+      var objectId = self.data.article_list[index].id;
+      wx.navigateTo({
+        url: '../../booklist/detail/detail?objectId=' + objectId
+      });
+    
+	},
+  
   //获取用户信息
   getUserInfo: function(e) {
     console.log(e)
@@ -393,6 +680,68 @@ Page({
       curIndex:curIndex
     })},
 
+  toHeatmap: function(){
+    wx.navigateTo({
+      url: '../heatmap/index'
+    });
+  },
+
+  clearReadamount: function(){
+    var that = this;
+    wx.showModal({
+      title: "提示",
+      content: "这将清空当前已记录的数据",
+      success: function(res){
+        if(res.confirm){
+          that.setData({
+            read1: "0",
+            read2: "",
+            read3: "",
+            read4: "",
+            read5: "",
+            read6: "",
+            read7: "",
+            read8: "",
+            read9: "",
+            read10: "",
+            read11: "",
+            read12: "",
+            read13: "",
+            read14: "",
+            read15: "",
+            read16: "",
+            read17: "",
+            read18: "",
+            read19: "",
+            read20: "",
+            read21: "",
+            read22: "",
+            read23: "",
+            read24: "",
+            read25: "",
+            read26: "",
+            read27: "",
+            read28: "",
+            read29: "",
+            read30: "",
+            read31: "",
+            read32: "",
+            read33: "",
+            read34: "",
+            read35: ""
+                });
+        }else if(res.cancle){
+          console.log("取消")
+        }
+      }
+
+    })
+
+   
+
+    
+  },
+
 
   onHide:function(){
     this.setData({
@@ -401,8 +750,38 @@ Page({
   },
 
     //使得文本整齐显示
-     onLoad(t) {
+  onLoad(t) {
     var self = this;
+    this.setData({
+      time: time
+    });
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse){
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+          console.log(time)
+        }
+      })
+    }
     //this.getAll();
     //this.fetchTopThreePosts(); //获取轮播图的3篇文章
     try {
@@ -418,6 +797,7 @@ Page({
 
 
   onShow: function (e) {
+    this.fetchNewThreeArticle();
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
@@ -428,6 +808,10 @@ Page({
       }
     })
   },
+
+  
+
+
 
     //--------------------------------------------------------------------------------------------------------
     handlerStart(e) {

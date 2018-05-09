@@ -36,31 +36,65 @@
     border-radius: 15rpx;
 }
 /* 没有show的样式： */
-.page_bd_stars {
+.page_bd_diarys {
     width: 289rpx;
     height: 402rpx;
     border: 2rpx solid #edecee;
     border-radius: 15rpx;
 }
-.page_bd_stars image {
+.page_bd_diarys image {
     margin: auto;
     border-radius: 15rpx;
     width: 70rpx;
     height: 70rpx;
 }
-.page_bd_starsName {
+/*增加超出行数显示省略号的功能*/
+.page_bd_diarystitle {
     word-wrap: 9;
     text-align: center;
     color: #525357;
     font-size: 32rpx;
+
+    overflow:hidden;  
+    text-overflow:ellipsis;  
+    display:-webkit-box;  
+    -webkit-line-clamp:1;  
+    -webkit-box-orient:vertical;  
 }
-.page_bd_starsUser {
+
+.page_bd_diarydelete {
+    word-wrap: 9;
     text-align: center;
-    font-size: 26rpx;
+    color: #DB845E;
+    font-size: 28rpx;
+}
+
+.page_bd_diarysrhesis {
+    word-wrap: 9;
+    text-align: center;
+    color: #76777b;
+    font-size: 28rpx;
+
+    overflow:hidden;  
+    text-overflow:ellipsis;  
+    display:-webkit-box;  
+    -webkit-line-clamp:2;  
+    -webkit-box-orient:vertical;  
+}
+.page_bd_diarysTime {
+    word-wrap: 9;
+    text-align: center;
+    color: #525357;
+    font-size: 22rpx;
+}
+
+.page_bd_diarysUser {
+    text-align: center;
+    font-size: 22rpx;
     color: #76777b;
     margin-top: 20rpx;
 }
-.page_bd_starsUser:before {
+.page_bd_diarysUser:before {
     content: '';
     position: absolute;
     width: 70rpx;
@@ -76,7 +110,7 @@
     border-radius: 15rpx;
 }
 .page__bd-create:hover{
-    border: 5rpx dotted #14b392;
+    border: 5rpx dotted #1296DB;
     background: #edecee;
 }
 .page__bd-create-text {

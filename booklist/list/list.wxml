@@ -10,6 +10,7 @@
 		<view class="title">{{item.title}}</view>
 		<!-- 日期 -->
 		<view class="time">{{item.updatedAt}}</view>
+		<view class="line"></view>
 	</view>
 </view>
 <!-- 上拉加载状态 -->

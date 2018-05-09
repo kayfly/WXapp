@@ -2,19 +2,19 @@ const app = getApp()
 var that;
 Page({
   data: {
-    stars:[],
-    newstars:[],
+    diarys:[],
+    newdiarys:[],
     resultShow:[],
     showView:0,
     display:false,
     display2:false
   },
   /**
-   * 跳转到 创建星球页面
+   * 跳转到 心情小记页面
    */
-  toCreateStar: function(e) {
+  tomoodDiary: function(e) {
     wx.navigateTo({
-      url:'createStars/createStars'
+      url:'moodDiary/diary'
     })
   },
   /**
@@ -26,11 +26,11 @@ Page({
       key: 'info',
       success:function(res){
         that.setData({
-          newstars:res.data
+          newdiarys:res.data
         });
       }
     });
-    if(that.data.newstars.length>0){
+    if(that.data.newdiarys.length>0){
       that.setData({
         display:true  
       });
@@ -49,11 +49,11 @@ Page({
       key: 'info',
       success:function(res){
         that.setData({
-          newstars:res.data
+          newdiarys:res.data
         });
       }
     });
-    if(that.data.newstars.length>0){
+    if(that.data.newdiarys.length>0){
       that.setData({
         display:true  
       });
@@ -82,11 +82,11 @@ Page({
             key: 'info',
             success:function(res){
               that.setData({
-                newstars:res.data
+                newdiarys:res.data
               });
             }
           });
-          if(that.data.newstars.length>0){
+          if(that.data.newdiarys.length>0){
             that.setData({
               display:true  
             });
@@ -139,7 +139,6 @@ Page({
    if(keyWord !=""){
      for(var i=0;i <array1.length;i++){
       if (keyWord === array1[i].rhesis){
-        console.log("哈哈")
         var resultList = array1[i];
         result.push(resultList);//将查找到的数组推到查找结果的列表里面
         console.log(result)
@@ -147,8 +146,27 @@ Page({
           resultShow: result,
           display2:true  
         });
-      }
-      
+      } else if (keyWord === array1[i].diarytitle){
+        var resultList = array1[i];
+        result.push(resultList);//将查找到的数组推到查找结果的列表里面
+        console.log(result)
+        that.setData({
+          resultShow: result,
+          display2: true
+        });
+
+       } else if (keyWord === array1[i].type) {
+         var resultList = array1[i];
+         result.push(resultList);//将查找到的数组推到查找结果的列表里面
+         console.log(result)
+         that.setData({
+           resultShow: result,
+           display2: true
+         });
+
+       }
+
+    
      }
    }
   

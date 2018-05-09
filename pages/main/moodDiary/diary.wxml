@@ -17,29 +17,28 @@
 </scroll-view>
 <view class="container">
     <view class="page-title">
-        <view class="page-title__title">创建免费星球</view>
+        <view class="page-title__title">心情小站</view>
         <view class="page-title__finish" bindtap="toMain">完成</view>
     </view>
     <view class="page-hd">
-        <view class="page-hd__star" bindtap="chooseImage"><image src="{{starpic}}"/></view>
+        <view class="page-hd__mood" bindtap="chooseImage"><image src="{{moodpic}}"/></view>
         <view class="page-hd__text">
-        <input class="input" bindinput="bindStarNameInput" type="text" placeholder="星球名字" value="{{starName}}"/>
+        <input class="input" bindinput="bindDiaryTitleInput" focus="true" type="text" placeholder="给个标题" value="{{diarytitle}}"/>
         </view>
     </view>
     <view class="page-bd">
-        <view class="page-bd__text">选择所属星球类别(必选)</view>
+        <view class="page-bd__text">今天周几？</view>
         <view class="page-bd__choose">
-            <view class="page-bd__choosebtn" bindtap="chooseBtn1" style="background: {{color1}};color:{{textcolor1}}">文艺</view>
-            <view class="page-bd__choosebtn" bindtap="chooseBtn2" style="background: {{color2}};color:{{textcolor2}}">科技</view>
-            <view class="page-bd__choosebtn" bindtap="chooseBtn3" style="background: {{color3}};color:{{textcolor3}}">时尚</view>
-            <view class="page-bd__choosebtn" bindtap="chooseBtn4" style="background: {{color4}};color:{{textcolor4}}">娱乐</view>
-            <view class="page-bd__choosebtn" bindtap="chooseBtn5" style="background: {{color5}};color:{{textcolor5}}">经济</view>
-            <view class="page-bd__choosebtn" bindtap="chooseBtn6" style="background: {{color6}};color:{{textcolor6}}">教育</view>
-            <view class="page-bd__choosebtn" bindtap="chooseBtn7" style="background: {{color7}} ;color:{{textcolor7}}">健康</view>
-            <view class="page-bd__choosebtn" bindtap="chooseBtn8" style="background: {{color8}};color:{{textcolor8}}">生活</view>
+            <view class="page-bd__choosebtn" bindtap="chooseBtn1" style="background: {{color1}};color:{{textcolor1}}">周一</view>
+            <view class="page-bd__choosebtn" bindtap="chooseBtn2" style="background: {{color2}};color:{{textcolor2}}">周二</view>
+            <view class="page-bd__choosebtn" bindtap="chooseBtn3" style="background: {{color3}};color:{{textcolor3}}">周三</view>
+            <view class="page-bd__choosebtn" bindtap="chooseBtn4" style="background: {{color4}};color:{{textcolor4}}">周四</view>
+            <view class="page-bd__choosebtn" bindtap="chooseBtn5" style="background: {{color5}};color:{{textcolor5}}">周五</view>
+            <view class="page-bd__choosebtn" bindtap="chooseBtn6" style="background: {{color6}};color:{{textcolor6}}">周六</view>
+            <view class="page-bd__choosebtn" bindtap="chooseBtn7" style="background: {{color7}} ;color:{{textcolor7}}">周日</view>
         </view>
     </view>
     <view class="page-ft">
-        <input bindinput="bindRhesisInput" type="text" placeholder="一句话描述一下今天心情吧" value="{{rhesis}}"/>
+        <input bindinput="bindRhesisInput" type="text" placeholder="记录一下今天的心情或摘录吧！（请控制在20字以内）" value="{{rhesis}}"/>
     </view>
 </view>

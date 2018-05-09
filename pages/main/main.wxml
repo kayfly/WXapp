@@ -1,4 +1,4 @@
-<import src="../starsList/starsList.wxml"/>
+<import src="../diaryList/diaryList.wxml"/>
 <view class="container">
     <view class="page__hd center">
        
@@ -10,7 +10,7 @@
             <view class="weui-search-bar__form">
                 <view class="weui-search-bar__box">
                     <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-<input type="text" class="weui-search-bar__input" placeholder="搜索" data-array="{{newstars}}" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+<input type="text" class="weui-search-bar__input" placeholder="搜索" data-array="{{newdiarys}}" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
 <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
                         <icon type="clear" size="14"></icon>
                     </view>
@@ -27,30 +27,32 @@
 
     
     <view class="page__bd">
-        <block wx:if="{{display}}" wx:for="{{newstars}}" wx:key="{{index}}">
-            <view class="page_bd_stars">
-                <image src="../../../images/{{item.starpic}}"></image>
-                <view class="page_bd_starsName">{{item.starName}}</view>
-                <view class="page_bd_starsUser">{{item.type}}</view>
-                <view class="page_bd_starsName">{{item.rhesis}}</view>
-                <text class="page_bd_starsName" catchtap="deleteDiary" data-array="{{newstars}}" data-index="{{index}}">删除</text>
+        <block wx:if="{{display}}" wx:for="{{newdiarys}}" wx:key="{{index}}">
+            <view class="page_bd_diarys">
+                <image src="../../../images/{{item.moodpic}}"></image>
+                <view class="page_bd_diarystitle">{{item.diarytitle}}</view>
+                <view class="page_bd_diarysUser">{{item.type}}</view>
+                <view class="page_bd_diarysrhesis">{{item.rhesis}}</view>
+                <view class="page_bd_diarysTime">{{item.diaryTime}}</view>
+                <text class="page_bd_diarydelete" catchtap="deleteDiary" data-array="{{newdiarys}}" data-index="{{index}}">删除</text>
             </view>
         </block>
 
 
          <block wx:if="{{display2}}" wx:for="{{resultShow}}" wx:key="{{index}}">
-            <view class="page_bd_stars">
-                <image src="../../../images/{{item.starpic}}"></image>
-                <view class="page_bd_starsName">{{item.starName}}</view>
-                <view class="page_bd_starsUser">{{item.type}}</view>
-                <view class="page_bd_starsName">{{item.rhesis}}</view>
-                <text class="page_bd_starsName" catchtap="deleteDiary" data-array="{{resultShow}}" data-index="{{index}}">删除</text>
+            <view class="page_bd_diarys">
+                <image src="../../../images/{{item.moodpic}}"></image>
+                <view class="page_bd_diarystitle">{{item.diarytitle}}</view>
+                <view class="page_bd_diarysUser">{{item.type}}</view>
+                <view class="page_bd_diarysrhesis">{{item.rhesis}}</view>
+                <view class="page_bd_diarysTime">{{item.diaryTime}}</view>
+                <text class="page_bd_diarydelete" catchtap="deleteDiary" data-array="{{resultShow}}" data-index="{{index}}">删除</text>
             </view>
         </block>
 
 
-        <block wx:for="{{stars}}" wx:key="{{index}}"><template is="stars_list" data="{{...item}}"/></block>
-        <view class="page__bd-create" bindtap="toCreateStar">  
+        <block wx:for="{{diarys}}" wx:key="{{index}}"><template is="diarys_list" data="{{...item}}"/></block>
+        <view class="page__bd-create" bindtap="tomoodDiary">  
             <view class="page__bd-create-text">今日心情</view>
         </view>    
     </view>

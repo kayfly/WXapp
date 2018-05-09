@@ -18,7 +18,6 @@ Page({
 			success: function(result) {
 				// 查询成功，调用get方法获取对应属性的值
 				var content = result.get("content");
-				console.log(content);
 			    that.setData({
 					content: content,
 			    	article: result

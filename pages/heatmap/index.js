@@ -9,7 +9,7 @@ function initChart(canvas, width, height) {
     height: height
   });
   canvas.setChart(chart);
-  var bgColor = '#191970';
+  var bgColor = '#34C6CD';
   let model = {
     yCates: ['第一天', '第二天', '第三天',
       '第四天', '第五天', '第六天',
@@ -65,8 +65,8 @@ function initChart(canvas, width, height) {
       }
     },
     visualMap: {
-      min: 1,
-      max: 10,
+      min: 5,
+      max: 40,
       show: false,
       calculable: true,
       orient: 'horizontal',

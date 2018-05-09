@@ -29,10 +29,23 @@ page {
     margin: auto;
     margin-top: 6rpx;
     float: right;
-    font-size: 48rpx;
+    font-size: 38rpx;
     width: 100%;
     height: 502rpx;
-    background: #edecee;
+    color: #fff;
+    background: #89D9D5;
+}
+
+ .page-hello {
+    text-align: center;
+    margin: auto;
+    margin-top: 6rpx;
+    float: right;
+    font-size: 32rpx;
+    width: 100%;
+    height: 502rpx;
+    color: #89D9D5;
+    background: #EDF5F4;
 }
 
 
@@ -48,21 +61,37 @@ page {
 }
 
 .page-bd__choosebtn {
-    border: 1px solid #a2a3a7;
+    border: 1px solid #34C6CD;
     border-radius: 16rpx;
     line-height: 67rpx;
-    color: #a2a3a7;
+    color: #01939A;
     font-size: 26rpx;
+}
+/*修改placeholder字体颜色的方法，默认为浅灰色*/
+.page-bd__choosebtn .placeholdercolor{
+    color: #34C6CD;
+
+}
+
+.button {
+    margin: auto;
+    text-align: center;
+    margin-top: 33rpx;
+    width: 714rpx;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,90rpx);
+    grid-gap: 32rpx;
 }
 
 .finish {
     margin-top: 32rpx;
-    border: 1px solid #a2a3a7;
-    border-radius: 5rpx;
+    border: 1px solid #C1E8E8;
+    border-radius: 8rpx;
     line-height: 67rpx;
-    color: #a2a3a7;
-    font-size: 32rpx;
-    width: 92rpx;
+    color: #eee;
+    background:#34C6CD;
+    font-size: 42rpx;
 }
 
 .line {

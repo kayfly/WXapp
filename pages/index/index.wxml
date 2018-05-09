@@ -3,56 +3,57 @@
   <scroll-view bindscroll="" scroll-y style="height: 100%;">
 <view class="container">
   <view class="haibao">
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:110px;">
-      <block wx:for="{{imgUrls}}">
-        <swiper-item>
-          <image src="{{item}}" class="slide-image" />
-        </swiper-item>
-      </block>
+     <swiper duration="300" interval="5000" autoplay="{{autoplay}}" current="{{ curIndex }}" style="overflow: visible;">
+      <swiper-item wx:for="{{ postsShowSwiperList }}" style="overflow: visible;" wx:key="actpic">
+        <image src="{{ item.actPic }}" style="width: 100%; height: 300rpx; background: #fff; box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, .1); -webkit-transform: scale({{ curIndex == index ? 0.9 : 0.9 }}) translate({{ (curIndex == index - 1 || curIndex == index + 1) ? (curIndex - index) * 30 : 0 }}%, 0); -webkit-transition: .3s; position: relative;"
+          bindtap="showDetail" mode="aspectFill" data-index="{{index}}"/>
+      </swiper-item>
     </swiper>
     </view>
  
-  <view class="page-hi">Hi，{{userInfo.nickName}}，今天是{{time}}，ABCDEFG？</view> 
-
+  <view class="page-hi">Hi，{{userInfo.nickName}}，今天是{{time}}</view> 
+  <view class="page-hello">今天读了几页书呢？（向右滑动查看本月热力图）</view> 
   <view class="page-bd__choose">
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput1" type="string" placeholder="Day1" value="{{read1}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput2" type="string" placeholder="Day2" value="{{read2}}"/></view>
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput3" type="string" placeholder="Day3" value="{{read3}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput4" type="string" placeholder="Day4" value="{{read4}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput5" type="string" placeholder="Day5" value="{{read5}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput6" type="string" placeholder="Day6" value="{{read6}}"/></view>
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput7" type="string" placeholder="Day7" value="{{read7}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput8" type="string" placeholder="Day8" value="{{read8}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput9" type="string" placeholder="Day9" value="{{read9}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput10" type="string" placeholder="Day10" value="{{read10}}"/></view>
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput11" type="string" placeholder="Day11" value="{{read11}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput12" type="string" placeholder="Day12" value="{{read12}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput13" type="string" placeholder="Day13" value="{{read13}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput14" type="string" placeholder="Day14" value="{{read14}}"/></view>
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput15" type="string" placeholder="Day15" value="{{read15}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput16" type="string" placeholder="Day16" value="{{read16}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput17" type="string" placeholder="Day17" value="{{read17}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput18" type="string" placeholder="Day18" value="{{read18}}"/></view>
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput19" type="string" placeholder="Day19" value="{{read19}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput20" type="string" placeholder="Day20" value="{{read20}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput21" type="string" placeholder="Day21" value="{{read21}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput22" type="string" placeholder="Day22" value="{{read22}}"/></view>
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput23" type="string" placeholder="Day23" value="{{read23}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput24" type="string" placeholder="Day24" value="{{read24}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput25" type="string" placeholder="Day25" value="{{read25}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput26" type="string" placeholder="Day26" value="{{read26}}"/></view>
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput27" type="string" placeholder="Day27" value="{{read27}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput28" type="string" placeholder="Day28" value="{{read28}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput29" type="string" placeholder="Day29" value="{{read29}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput30" type="string" placeholder="Day30" value="{{read30}}"/></view>
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput31" type="string" placeholder="Day31" value="{{read31}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput32" type="string" placeholder="Day32" value="{{read32}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput33" type="string" placeholder="Day33" value="{{read33}}"/></view> 
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput34" type="string" placeholder="Day34" value="{{read34}}"/></view>
-  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput35" type="string" placeholder="Day35" value="{{read35}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput1" type="number" placeholder="Day1" placeholder-class="placeholdercolor" value="{{read1}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput2" type="number" placeholder="Day2" placeholder-class="placeholdercolor" value="{{read2}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput3" type="number" placeholder="Day3" placeholder-class="placeholdercolor" value="{{read3}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput4" type="number" placeholder="Day4" placeholder-class="placeholdercolor" value="{{read4}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput5" type="number" placeholder="Day5" placeholder-class="placeholdercolor" value="{{read5}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput6" type="number" placeholder="Day6" placeholder-class="placeholdercolor" value="{{read6}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput7" type="number" placeholder="Day7" placeholder-class="placeholdercolor" value="{{read7}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput8" type="number" placeholder="Day8" placeholder-class="placeholdercolor" value="{{read8}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput9" type="number" placeholder="Day9" placeholder-class="placeholdercolor" value="{{read9}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput10" type="number" placeholder="Day10" placeholder-class="placeholdercolor" value="{{read10}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput11" type="number" placeholder="Day11" placeholder-class="placeholdercolor" value="{{read11}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput12" type="number" placeholder="Day12" placeholder-class="placeholdercolor" value="{{read12}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput13" type="number" placeholder="Day13" placeholder-class="placeholdercolor" value="{{read13}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput14" type="number" placeholder="Day14" placeholder-class="placeholdercolor" value="{{read14}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput15" type="number" placeholder="Day15" placeholder-class="placeholdercolor" value="{{read15}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput16" type="number" placeholder="Day16" placeholder-class="placeholdercolor" value="{{read16}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput17" type="number" placeholder="Day17" placeholder-class="placeholdercolor" value="{{read17}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput18" type="number" placeholder="Day18" placeholder-class="placeholdercolor" value="{{read18}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput19" type="number" placeholder="Day19" placeholder-class="placeholdercolor" value="{{read19}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput20" type="number" placeholder="Day20" placeholder-class="placeholdercolor" value="{{read20}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput21" type="number" placeholder="Day21" placeholder-class="placeholdercolor" value="{{read21}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput22" type="number" placeholder="Day22" placeholder-class="placeholdercolor" value="{{read22}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput23" type="number" placeholder="Day23" placeholder-class="placeholdercolor" value="{{read23}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput24" type="number" placeholder="Day24" placeholder-class="placeholdercolor" value="{{read24}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput25" type="number" placeholder="Day25" placeholder-class="placeholdercolor" value="{{read25}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput26" type="number" placeholder="Day26" placeholder-class="placeholdercolor" value="{{read26}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput27" type="number" placeholder="Day27" placeholder-class="placeholdercolor" value="{{read27}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput28" type="number" placeholder="Day28" placeholder-class="placeholdercolor" value="{{read28}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput29" type="number" placeholder="Day29" placeholder-class="placeholdercolor" value="{{read29}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput30" type="number" placeholder="Day30" placeholder-class="placeholdercolor" value="{{read30}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput31" type="number" placeholder="Day31" placeholder-class="placeholdercolor" value="{{read31}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput32" type="number" placeholder="Day32" placeholder-class="placeholdercolor" value="{{read32}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput33" type="number" placeholder="Day33" placeholder-class="placeholdercolor" value="{{read33}}"/></view> 
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput34" type="number" placeholder="Day34" placeholder-class="placeholdercolor" value="{{read34}}"/></view>
+  <view><input class="page-bd__choosebtn" bindinput="bindReadamountInput35" type="number" placeholder="Day35" placeholder-class="placeholdercolor" value="{{read35}}"/></view> 
   </view> 
-
-  <view class="finish" bindtap="statisticalData">完成</view>
+  <view class="button">
+  <view class="finish" bindtap="statisticalData">生成</view>
+  <view class="finish" bindtap="clearReadamount">清零</view>
+  </view>
 </view>
 </scroll-view>
 </view>
@@ -83,41 +84,20 @@
     <view style='background-color: #fff;' class='bottom-box'>
       <view class="list-box">
         <view class="icon-text">
-          <span>步数</span>
+          <span>泛舟河上</span>
         </view>
-        <text>2543</text>
       </view>
       <view class="list-box " bindtap=" ">
         <view class="icon-text ">
-          <span>排名</span>
+          <span>驰思千里</span>
         </view>
-        <text>21</text>
+
       </view>
     </view>
     <view class="thirdblock" style='margin-top:80px;'>
-      <view class="itemself" bindtap="click_myLaunch" data-index="1">
+      <view class="itemself" bindtap="toHeatmap" data-index="1">
         <image src="/static/images/icon/times.png" class="itemself_ico"></image>
-        <span>我的发起</span>
-      </view>
-      <view class="itemself" bindtap="click_myJoin" data-index="2">
-        <image src="/static/images/icon/jssq.png" class="itemself_ico"></image>
-        <span>我的加入</span>
-      </view>
-      <view class="itemself" bindtap="click_myCollection" data-index="3">
-        <image src="/static/images/icon/status.png" class="itemself_ico"></image>
-        <span>我的收藏</span>
-      </view>
-      <view class="itemself" bindtap="click_projectBrief" data-index="4">
-        <image src="/static/images/icon/specialty.png" class="itemself_ico"></image>
-        <span>项目简介</span>
-      </view>
-      <view class="itemself" bindtap="click_Tick" data-index="5">
-        <image src="/static/images/icon/tick2.png " class="itemself_ico"></image>
-        <span>反馈建议</span>
-      </view>
-       <view class="itemself" bindtap="click_more" data-index="6">
-        <image src="/static/images/icon/plus.png " class="itemself_ico"></image>
-        <span>更多信息</span>
+        <span>查看热力图</span>
       </view>
     </view>
     <view class="h10"></view>
