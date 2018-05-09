@@ -1,0 +1,314 @@
+/**index.wxss**/
+page {
+    margin: auto;
+}
+.container {
+    
+    widows: 100%;
+    height: 100%;
+    z-index: 5;
+    background: "../../../images/Pic/UserPic2.jpeg";
+}
+
+.haibao{
+    text-align: centor;
+    width: 800rpx;
+}
+
+.slideimage{
+    width: 100%;
+    height: 74px;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+ .page-hi {
+    text-align: center;
+    margin: auto;
+    margin-top: 6rpx;
+    float: right;
+    font-size: 38rpx;
+    width: 100%;
+    height: 502rpx;
+    color: #fff;
+    background: #34C6CD;
+}
+
+ .page-hello {
+    text-align: center;
+    margin: auto;
+    margin-top: 6rpx;
+    float: right;
+    font-size: 32rpx;
+    width: 100%;
+    height: 502rpx;
+    color: #34C6CD;
+    background: #EDF5F4;
+}
+
+
+.page-bd__choose {
+    margin: auto;
+    text-align: center;
+    margin-top: 33rpx;
+    width: 714rpx;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(2,67rpx);
+    grid-gap: 32rpx;
+}
+
+.page-bd__choosebtn {
+    border: 1px solid #34C6CD;
+    border-radius: 16rpx;
+    line-height: 67rpx;
+    color: #01939A;
+    font-size: 26rpx;
+}
+/*修改placeholder字体颜色的方法，默认为浅灰色*/
+.page-bd__choosebtn .placeholdercolor{
+    color: #34C6CD;
+
+}
+
+.button {
+    margin: auto;
+    text-align: center;
+    margin-top: 33rpx;
+    width: 714rpx;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,90rpx);
+    grid-gap: 32rpx;
+}
+
+.finish {
+    margin-top: 32rpx;
+    border: 1px solid #C1E8E8;
+    border-radius: 8rpx;
+    line-height: 67rpx;
+    color: #eee;
+    background:#34C6CD;
+    font-size: 42rpx;
+}
+
+.line {
+  border: 1px solid #cccccc
+}
+
+
+
+
+
+
+
+
+/**实现侧滑页cSS/**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mpage {
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  background-color: #fff;
+}
+
+.withAnimate {
+  transition: all 300ms ease;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+}
+
+/*第二个侧滑页cSS*/
+
+li {
+  list-style: none;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: #f0f0f0;
+}
+
+.h10 {
+  background: #f0f0f0;
+}
+
+.h1 {
+  height: 1px;
+  margin-left: 50px;
+  background: #f0f0f0;
+  position: fixed;
+}
+
+.fr {
+  float: right;
+}
+
+.hint {
+  color: #666;
+  font-size: 11px;
+  margin-right: 5px;
+}
+
+.firstblock, .secondblock, .thirdblock {
+  background-color: #fff;
+  font-size: 16px;
+}
+
+/* 头部登陆 */
+
+.loginbg {
+  width: 100%;
+  height: 416rpx;
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+  position: relative;
+}
+
+/* 设置条目 */
+
+.itemself {
+  padding-bottom: 7.5px;
+  padding-top: 7.5px;
+  background-color: #fff;
+  border-bottom: 1rpx solid rgb(230, 230, 230);
+  margin-left: 25%;
+  margin-right: 12.5%;
+}
+
+.itemself_ico {
+  float: left;
+  width: 20px;
+  height: 20px;
+}
+
+.itemself_arrow {
+  float: right;
+  height: 26px;
+  width: 26px;
+  margin: 11px 20px;
+}
+
+.presshover {
+  background-color: #fafafa;
+}
+
+.font_size {
+  font-size: 16px;
+  color: #333;
+}
+
+.bottom-box {
+  width: 100%;
+  text-align: center;
+}
+
+.list-box {
+  width: 25%;
+  float: left;
+  border-bottom: 10rpx solid rgb(230, 230, 230);
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.icon-text {
+  height: 20px;
+  line-height: 20px;
+  font-size: 18px;
+}
+
+.user {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-right: 1px solid #dbdbdb;
+  box-sizing: border-box;
+}
+
+.user .user-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.user .user-box .user-face-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 20rpx 0;
+}
+
+.user .user-box .user-face {
+  width: 150rpx;
+  height: 150rpx;
+  position: fixed;
+  border-radius: 50%;
+  -moz-box-shadow: 0px 3px 20px #333;
+  -webkit-box-shadow: 0px 3px 20px #333;
+  box-shadow: 0px 3px 20px #333;
+}
+
+.user .user-box .user-info {
+  height: 30px;
+  position: fixed;
+  margin-top: 60px;
+}
+
+.user .user-box .user-info text {
+  width: 200rpx;
+  height: 28px;
+  float: left;
+}
+
+.user .user-box .user-info image {
+  height: 20px;
+  width: 20px;
+  float: left;
+}
+
+.user .user-box .one-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  color: white;
+  font-size: 38rpx;
+}
+
+/*---------------------------*/
+
+.dialog {
+  /*透明蒙层*/
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  z-index: 1000;
+  color: #fff;
+}

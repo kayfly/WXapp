@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/Hello/index",
     "pages/main/main",
     "pages/main/moodDiary/diary",
     "pages/logs/logs",
@@ -28,7 +29,7 @@
         "text": "心情小记"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/Hello/index",
         "iconPath": "images/bar/calendar.png",
         "selectedIconPath": "images/bar/calendarc.png",
         "text": "河上一周"

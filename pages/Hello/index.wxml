@@ -1,0 +1,105 @@
+<!--index.wxml-->
+<view class="mpage {{!ui.tStart? 'withAnimate': ''}}" style="left:{{ui.offsetLeft}}px;width: {{ui.windowWidth}}px;" bindtouchstart="handlerStart" catchtouchmove="handlerMove"  bindtouchcancel="handlerCancel" bindtouchend="handlerEnd" bindtap="handlerPageTap">
+  <scroll-view bindscroll="" scroll-y style="height: 100%;">
+<view class="container">
+  <view class="haibao">
+     <swiper duration="300" interval="5000" autoplay="{{autoplay}}" current="{{ curIndex }}" style="overflow: visible;">
+      <swiper-item wx:for="{{ postsShowSwiperList }}" style="overflow: visible;" wx:key="actpic">
+        <image src="{{ item.actPic }}" style="width: 100%; height: 300rpx; background: #fff; box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, .1); -webkit-transform: scale({{ curIndex == index ? 0.9 : 0.9 }}) translate({{ (curIndex == index - 1 || curIndex == index + 1) ? (curIndex - index) * 30 : 0 }}%, 0); -webkit-transition: .3s; position: relative;"
+          bindtap="showDetail" mode="aspectFill" data-index="{{index}}"/>
+      </swiper-item>
+    </swiper>
+    </view>
+ 
+  <view class="page-hi">Hi，{{userInfo.nickName}}，今天是{{time}}，读了几页书呢？</view> 
+  <view class="page-hello">每日打卡一次即可，有任何问题重新开始就好啦！</view> 
+ 
+  <view class="page-bd__choose">
+  <view wx-if="{{display1}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput1" type="number" placeholder="Day1" placeholder-class="placeholdercolor" value="{{read1}}"/></view> 
+  <view wx-if="{{display2}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput2" type="number" placeholder="Day2" placeholder-class="placeholdercolor" value="{{read2}}"/></view>
+  <view wx-if="{{display3}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput3" type="number" placeholder="Day3" placeholder-class="placeholdercolor" value="{{read3}}"/></view> 
+  <view wx-if="{{display4}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput4" type="number" placeholder="Day4" placeholder-class="placeholdercolor" value="{{read4}}"/></view> 
+  <view wx-if="{{display5}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput5" type="number" placeholder="Day5" placeholder-class="placeholdercolor" value="{{read5}}"/></view> 
+  <view wx-if="{{display6}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput6" type="number" placeholder="Day6" placeholder-class="placeholdercolor" value="{{read6}}"/></view>
+  <view wx-if="{{display7}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput7" type="number" placeholder="Day7" placeholder-class="placeholdercolor" value="{{read7}}"/></view> 
+  <view wx-if="{{display8}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput8" type="number" placeholder="Day8" placeholder-class="placeholdercolor" value="{{read8}}"/></view> 
+  <view wx-if="{{display9}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput9" type="number" placeholder="Day9" placeholder-class="placeholdercolor" value="{{read9}}"/></view> 
+  <view wx-if="{{display10}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput10" type="number" placeholder="Day10" placeholder-class="placeholdercolor" value="{{read10}}"/></view>
+  <view wx-if="{{display11}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput11" type="number" placeholder="Day11" placeholder-class="placeholdercolor" value="{{read11}}"/></view> 
+  <view wx-if="{{display12}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput12" type="number" placeholder="Day12" placeholder-class="placeholdercolor" value="{{read12}}"/></view> 
+  <view wx-if="{{display13}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput13" type="number" placeholder="Day13" placeholder-class="placeholdercolor" value="{{read13}}"/></view> 
+  <view wx-if="{{display14}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput14" type="number" placeholder="Day14" placeholder-class="placeholdercolor" value="{{read14}}"/></view>
+  <view wx-if="{{display15}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput15" type="number" placeholder="Day15" placeholder-class="placeholdercolor" value="{{read15}}"/></view> 
+  <view wx-if="{{display16}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput16" type="number" placeholder="Day16" placeholder-class="placeholdercolor" value="{{read16}}"/></view> 
+  <view wx-if="{{display17}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput17" type="number" placeholder="Day17" placeholder-class="placeholdercolor" value="{{read17}}"/></view> 
+  <view wx-if="{{display18}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput18" type="number" placeholder="Day18" placeholder-class="placeholdercolor" value="{{read18}}"/></view>
+  <view wx-if="{{display19}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput19" type="number" placeholder="Day19" placeholder-class="placeholdercolor" value="{{read19}}"/></view> 
+  <view wx-if="{{display20}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput20" type="number" placeholder="Day20" placeholder-class="placeholdercolor" value="{{read20}}"/></view> 
+  <view wx-if="{{display21}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput21" type="number" placeholder="Day21" placeholder-class="placeholdercolor" value="{{read21}}"/></view> 
+  <view wx-if="{{display22}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput22" type="number" placeholder="Day22" placeholder-class="placeholdercolor" value="{{read22}}"/></view>
+  <view wx-if="{{display23}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput23" type="number" placeholder="Day23" placeholder-class="placeholdercolor" value="{{read23}}"/></view> 
+  <view wx-if="{{display24}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput24" type="number" placeholder="Day24" placeholder-class="placeholdercolor" value="{{read24}}"/></view> 
+  <view wx-if="{{display25}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput25" type="number" placeholder="Day25" placeholder-class="placeholdercolor" value="{{read25}}"/></view> 
+  <view wx-if="{{display26}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput26" type="number" placeholder="Day26" placeholder-class="placeholdercolor" value="{{read26}}"/></view>
+  <view wx-if="{{display27}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput27" type="number" placeholder="Day27" placeholder-class="placeholdercolor" value="{{read27}}"/></view> 
+  <view wx-if="{{display28}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput28" type="number" placeholder="Day28" placeholder-class="placeholdercolor" value="{{read28}}"/></view> 
+  <view wx-if="{{display29}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput29" type="number" placeholder="Day29" placeholder-class="placeholdercolor" value="{{read29}}"/></view> 
+  <view wx-if="{{display30}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput30" type="number" placeholder="Day30" placeholder-class="placeholdercolor" value="{{read30}}"/></view>
+  <view wx-if="{{display31}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput31" type="number" placeholder="Day31" placeholder-class="placeholdercolor" value="{{read31}}"/></view> 
+  <view wx-if="{{display32}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput32" type="number" placeholder="Day32" placeholder-class="placeholdercolor" value="{{read32}}"/></view> 
+  <view wx-if="{{display33}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput33" type="number" placeholder="Day33" placeholder-class="placeholdercolor" value="{{read33}}"/></view> 
+  <view wx-if="{{display34}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput34" type="number" placeholder="Day34" placeholder-class="placeholdercolor" value="{{read34}}"/></view>
+  <view wx-if="{{display35}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput35" type="number" placeholder="Day35" placeholder-class="placeholdercolor" value="{{read35}}"/></view> 
+  </view> 
+  <view class="button">
+  <view class="finish" bindtap="statisticalData">生成图表</view>
+  <view class="finish" bindtap="clearReadamount">新的开始</view>
+  </view>
+</view>
+</scroll-view>
+</view>
+
+
+
+<!-- 侧滑栏 -->
+<view bindtouchstart="handlerStart" catchtouchmove="handlerMove" bindtouchcancel="handlerCancel" bindtouchend="handlerEnd" class="user" style="width: {{ui.menuWidth}}px">
+  <view style="width: {{ui.menuWidth}}px;left:{{-ui.menuWidth/3 + ui.offsetLeft/3}}px" class="user-box {{!ui.tStart? 'withAnimate': ''}}">
+    <view class="user-face-wrapper">
+      <image mode="aspectFill" src="/static/images/icon/backGround.png" style="height: 150px" class="loginbg"></image>
+
+      <image class="user-face" src="{{userInfo.avatarUrl}}"></image>
+
+      <view class='user-info'>
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+    </block>
+        <text>{{userInfo.nickName}}</text>
+        <image wx:if="{{userInfo.gender == 1}}" src="/static/images/m3.png"></image>
+        <image wx:if="{{userInfo.gender == 2}}" src="/static/images/w3.png"></image>
+        <image wx:if="{{userInfo.gender == 0 || userInfo.gender==''}}" src="/static/images/sex.png"></image>
+      </view>
+    </view>
+    <view style='background-color: #fff;' class='bottom-box'>
+      <view class="list-box">
+        <view class="icon-text">
+          <span>泛舟河上</span>
+        </view>
+      </view>
+      <view class="list-box " bindtap=" ">
+        <view class="icon-text ">
+          <span>驰思千里</span>
+        </view>
+
+      </view>
+    </view>
+    <view class="thirdblock" style='margin-top:80px;'>
+      <view class="itemself" bindtap="toHeatmap" data-index="1">
+        <image src="/static/images/icon/times.png" class="itemself_ico"></image>
+        <span>查看热力图</span>
+      </view>
+    </view>
+    <view class="h10"></view>
+    <view class="h10"></view>
+
+  </view>
+</view>

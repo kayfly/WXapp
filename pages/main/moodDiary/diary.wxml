@@ -23,7 +23,7 @@
     <view class="page-hd">
         <view class="page-hd__mood" bindtap="chooseImage"><image src="{{moodpic}}"/></view>
         <view class="page-hd__text">
-        <input class="input" bindinput="bindDiaryTitleInput" focus="true" type="text" placeholder="给个标题" value="{{diarytitle}}"/>
+        <input class="input" maxlength='28' bindinput="bindDiaryTitleInput" focus="true" type="text" placeholder="给个标题" value="{{diarytitle}}"/>
         </view>
     </view>
     <view class="page-bd">
@@ -39,6 +39,6 @@
         </view>
     </view>
     <view class="page-ft">
-        <input bindinput="bindRhesisInput" type="text" placeholder="记录一下今天的心情或摘录吧！（请控制在20字以内）" value="{{rhesis}}"/>
+        <input class="page-bd__text" bindinput="bindRhesisInput" type="text" placeholder="记录一下今天的心情或摘录吧！（请控制在20字以内）" value="{{rhesis}}"/>
     </view>
 </view>
