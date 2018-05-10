@@ -7,12 +7,12 @@ const formatTime = date => {
   const second = date.getSeconds()
 
   //return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-  return [year, month, day].map(formatNumber).join('/')
+  return [month].map(formatNumber).join('/')
 }
 
 const formatNumber = n => {
   n = n.toString()
-  return n[1] ? n : '0' + n
+  return n[1] ? n :  + n
 }//转化为字符串显示
 /*
 map映射例子：

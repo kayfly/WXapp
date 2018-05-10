@@ -11,8 +11,8 @@
     </swiper>
     </view>
  
-  <view class="page-hi">Hi，{{userInfo.nickName}}，今天是{{time}}，读了几页书呢？</view> 
-  <view class="page-hello">每日打卡一次即可，有任何问题重新开始就好啦！</view> 
+  <view class="page-hi">Hi，{{userInfo.nickName}}，{{time}}月了，这个月读了多少书呢？</view> 
+  <view class="page-hello">请一次输入，当前页面数据下次打开会归零</view> 
  
   <view class="page-bd__choose">
   <view wx-if="{{display1}}"><input class="page-bd__choosebtn" bindinput="bindReadamountInput1" type="number" placeholder="Day1" placeholder-class="placeholdercolor" value="{{read1}}"/></view> 

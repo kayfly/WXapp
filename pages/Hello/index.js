@@ -118,8 +118,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -157,8 +157,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -194,8 +194,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -231,8 +231,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -268,8 +268,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -306,8 +306,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -343,8 +343,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -380,8 +380,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -418,8 +418,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -455,8 +455,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -493,8 +493,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -530,8 +530,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -567,8 +567,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -604,8 +604,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -642,8 +642,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -679,8 +679,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -716,8 +716,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -753,8 +753,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -791,8 +791,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -828,8 +828,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -865,8 +865,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -902,8 +902,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -940,8 +940,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -977,8 +977,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1014,8 +1014,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1052,8 +1052,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1089,8 +1089,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1126,8 +1126,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1164,8 +1164,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1201,8 +1201,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1238,8 +1238,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1275,8 +1275,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1313,8 +1313,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1350,8 +1350,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1387,8 +1387,8 @@ Page({
         });
         if (that.data.timeInterval == 0) {
           wx.showModal({
-            title: '打卡完成',
-            content: '点击取消可重新输入，点击生成图表即可生成热力图，向右滑动屏幕即可找到热力图入口',
+            title: '已记录',
+            content: '取消即可重新输入',
             success: function (res) {
               if (res.confirm) {
                 that.setData({
@@ -1479,8 +1479,8 @@ Page({
       data: this.data.readamount,
       success: function () {
         wx.showModal({
-          title: '提示',
-          content: '图表已生成，快去看看吧！',
+          title: '图表已生成',
+          content: '快去看看吧，向右滑动即可找到热力图入口！',
           success:function(res){
             if(res.confirm){
               wx.navigateTo({

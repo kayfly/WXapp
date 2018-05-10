@@ -3,6 +3,7 @@ import * as echarts from '../../ec-canvas/echarts';
 const app = getApp();
 let GLOBAL_CHART=[]
 function initChart(canvas, width, height) {
+  
   GLOBAL_CHART=[canvas,width,height]
   const chart = echarts.init(canvas, null, {
     width: width,
@@ -10,6 +11,7 @@ function initChart(canvas, width, height) {
   });
   canvas.setChart(chart);
   var bgColor = '#34C6CD';
+  
   let model = {
     yCates: ['第一天', '第二天', '第三天',
       '第四天', '第五天', '第六天',
@@ -26,10 +28,11 @@ function initChart(canvas, width, height) {
       [6, 0, 6], [6, 1, 5], [6, 2, 3], [6, 3, 1], [6, 4, 2]
     ]
   };
+
   model.data=(wx.getStorageSync("readamount"))
   const data = model.data.map(function (item) {
-    return [item[1], item[0], item[2] || '-'];
-  });
+  return [item[1], item[0], item[2] || '-'];
+});
   
   const option = {
     backgroundColor: bgColor,
@@ -113,7 +116,7 @@ Page({
     }
   },
 
-  onShow(){
+  onTap(){
     initChart(GLOBAL_CHART[0],GLOBAL_CHART[1],GLOBAL_CHART[2])
   },
   onReady() {
