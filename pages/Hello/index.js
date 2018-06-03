@@ -12,6 +12,7 @@ const FAST_SPEED_EFF_Y = 50;
 Page({
   data: {
     dialog:false,
+    showheatmap: false,
     display1:true,
     display2: true,
     display3: true,
@@ -96,8 +97,7 @@ Page({
     read33: "",
     read34: "",
     read35: "",
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    hasUserInfo: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -1472,8 +1472,11 @@ Page({
     model.data[24][2] = this.data.read33;
     model.data[29][2] = this.data.read34;
     model.data[34][2] = this.data.read35;
-    
+      
       this.data.readamount = model.data;
+      this.setData({
+        showheatmap: true,
+      });
       wx.setStorage({
       key: 'readamount',
       data: this.data.readamount,
@@ -1493,6 +1496,17 @@ Page({
       }
     })
   },
+
+  getUserInfo: function(e){
+
+   this.setData(
+     {
+       userInfo: e.detail.userInfo,
+       hasUserInfo: true
+     }
+   )
+  },
+
   //获取最新的三篇文章
   fetchNewThreeArticle: function(){
     var self = this;
@@ -1539,17 +1553,6 @@ Page({
     
 	},
   
-  //获取用户信息
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  },
-
-   
   changeCurIndex:function(){
     this.setData({
       curIndex:curIndex
@@ -1666,33 +1669,6 @@ Page({
     this.setData({
       time: time
     });
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-          console.log(time)
-        }
-      })
-    }
     //this.getAll();
     //this.fetchTopThreePosts(); //获取轮播图的3篇文章
     try {

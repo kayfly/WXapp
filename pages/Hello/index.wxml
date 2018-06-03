@@ -5,7 +5,7 @@
   <view class="haibao">
      <swiper duration="300" interval="5000" autoplay="{{autoplay}}" current="{{ curIndex }}" style="overflow: visible;">
       <swiper-item wx:for="{{ postsShowSwiperList }}" style="overflow: visible;" wx:key="actpic">
-        <image src="{{ item.actPic }}" style="width: 100%; height: 300rpx; background: #fff; box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, .1); -webkit-transform: scale({{ curIndex == index ? 0.9 : 0.9 }}) translate({{ (curIndex == index - 1 || curIndex == index + 1) ? (curIndex - index) * 30 : 0 }}%, 0); -webkit-transition: .3s; position: relative;"
+        <image src="{{ item.actPic }}" style="width: 100%; height: 100%; background: #fff; box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, .1); -webkit-transform: scale({{ curIndex == index ? 0.9 : 0.9 }}) translate({{ (curIndex == index - 1 || curIndex == index + 1) ? (curIndex - index) * 30 : 0 }}%, 0); -webkit-transition: .3s; position: relative;"
           bindtap="showDetail" mode="aspectFill" data-index="{{index}}"/>
       </swiper-item>
     </swiper>
@@ -64,21 +64,20 @@
 <!-- 侧滑栏 -->
 <view bindtouchstart="handlerStart" catchtouchmove="handlerMove" bindtouchcancel="handlerCancel" bindtouchend="handlerEnd" class="user" style="width: {{ui.menuWidth}}px">
   <view style="width: {{ui.menuWidth}}px;left:{{-ui.menuWidth/3 + ui.offsetLeft/3}}px" class="user-box {{!ui.tStart? 'withAnimate': ''}}">
+
+<!-- 新的open-data方法获取用户信息-->
     <view class="user-face-wrapper">
       <image mode="aspectFill" src="/static/images/icon/backGround.png" style="height: 150px" class="loginbg"></image>
 
-      <image class="user-face" src="{{userInfo.avatarUrl}}"></image>
+      <open-data class="user-face" type="userAvatarUrl" background-size="cover"></open-data>
 
       <view class='user-info'>
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-    </block>
         <text>{{userInfo.nickName}}</text>
-        <image wx:if="{{userInfo.gender == 1}}" src="/static/images/m3.png"></image>
-        <image wx:if="{{userInfo.gender == 2}}" src="/static/images/w3.png"></image>
-        <image wx:if="{{userInfo.gender == 0 || userInfo.gender==''}}" src="/static/images/sex.png"></image>
+        <image wx:if="{{userInfo.gender == 1}}" src="../../static/images/m3.png"></image>
       </view>
     </view>
+
+
     <view style='background-color: #fff;' class='bottom-box'>
       <view class="list-box">
         <view class="icon-text">
@@ -89,15 +88,19 @@
         <view class="icon-text ">
           <span>驰思千里</span>
         </view>
-
       </view>
     </view>
-    <view class="thirdblock" style='margin-top:80px;'>
-      <view class="itemself" bindtap="toHeatmap" data-index="1">
+      <view class="thirdblock" style='margin-top:80px;'>
+      <view class="itemself" wx-if="{{showheatmap}}" bindtap="toHeatmap" data-index="1">
         <image src="/static/images/icon/times.png" class="itemself_ico"></image>
         <span>查看热力图</span>
       </view>
+      <view class="itemself" wx-if="{{!showheatmap}}" data-index="1">
+        <image src="/static/images/icon/times.png" class="itemself_ico"></image>
+        <span>你还没有生成热力图</span>
+      </view>
     </view>
+    <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取姓名性别信息</button>
     <view class="h10"></view>
     <view class="h10"></view>
 
