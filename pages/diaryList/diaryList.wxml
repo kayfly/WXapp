@@ -1,7 +1,0 @@
-<template name="diarys_list">
-<view class="page_bd_diarys">
-        <image src="/images/{{diarypic}}"></image>
-        <view class="page_bd_diarysName">{{diaryname}}</view>
-        <view class="page_bd_diarysUser">{{type}}</view>
-    </view>
-</template>

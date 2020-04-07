@@ -9,7 +9,7 @@ Page({
   data: {
     diarytitle:'',
     rhesis:'',
-    moodpic: '../../../images/mood1.png',
+    moodpic: 'cloud://qcampus-2020.7163-qcampus-2020-1301774162/images/mood1.png',
     type:0,
     introduction:'',
     info:[],
@@ -336,7 +336,22 @@ Page({
       newinfo[0].rhesis = this.data.rhesis;
       newinfo[0].diaryTime = this.data.diaryTime;
       this.data.info = newinfo.concat(this.data.info);
-      wx.setStorage({
+   
+      const db = wx.cloud.database()
+      db.collection('diary').add({
+        // data 字段表示需新增的 JSON 数据
+        data: {
+          // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
+          info: this.data.info,
+        },
+        success: function(res) {
+          wx.switchTab({
+            url:'../main'
+          });
+        }
+      })
+      //存入本地存储
+     /* wx.setStorage({
         key: 'info',
         data: this.data.info,
         success:function(){
@@ -344,7 +359,7 @@ Page({
             url:'../main'
           });
         }
-    });  
+    });  */
   }
     
   },
@@ -366,15 +381,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    wx.getStorage({
-      key: 'info',
-      success:function(res){
-        that.setData({
-          info:res.data
-        });
-      }
-    });
   },
 
   /**

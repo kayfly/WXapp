@@ -7,9 +7,9 @@
 	<!-- 标题与日期 -->
 	<view>
 		<!-- 标题 -->
-		<view class="title">{{item.title}}</view>
+		<view class="title">{{item.nickName}}</view>
 		<!-- 日期 -->
-		<view class="time">{{item.updatedAt}}</view>
+		<view class="time">{{item.sendTime}}</view>
 		<view class="line"></view>
 	</view>
 </view>

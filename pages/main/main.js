@@ -2,6 +2,9 @@ const app = getApp()
 var that;
 Page({
   data: {
+    diarytitle:'',
+    rhesis:'',
+    moodpic: 'cloud://qcampus-2020.7163-qcampus-2020-1301774162/images/mood1.png',
     diarys:[],
     newdiarys:[],
     resultShow:[],
@@ -22,59 +25,73 @@ Page({
    */
   onReady: function () {
     var that = this;
-    wx.getStorage({
+    const db = wx.cloud.database()
+    db.collection('diary').get({
+      success: function(res) {
+        // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
+        console.log(res.data)
+        that.setData({
+          newdiarys: res.data,
+        });
+        console.log(newdiarys.length)
+      }
+    })
+    /*wx.getStorage({
       key: 'info',
       success:function(res){
         that.setData({
           newdiarys:res.data
         });
       }
-    });
-    if(that.data.newdiarys.length>0){
+    });*/
+    if(that.data.newdiarys.length>=0){
       that.setData({
         display:true  
       });
     }
-  
   },
-
-
-  
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    wx.getStorage({
-      key: 'info',
-      success:function(res){
-        that.setData({
-          newdiarys:res.data
-        });
-      }
-    });
-    if(that.data.newdiarys.length>0){
-      that.setData({
-        display:true  
-      });
-    }
   },
 
 /*
-删除日志的操作要注意，我们修改的数据不会马上渲染到页面，需要调用一下setDat()方发才能立即生效
-
+删除日志的操作要注意，我们修改的数据不会马上渲染到页面，需要调用一下setDate()方发才能立即生效
 */
     deleteDiary: function (e) {
       var that = this;
       console.log(e.currentTarget.dataset.index)
       console.log(e)
       var objectIndex = e.currentTarget.dataset.index;
-      var deleteDiary = e.currentTarget.dataset.array;
+      var deleteDiary = e.currentTarget.dataset.array[objectIndex]._id;
       
-      deleteDiary.splice(objectIndex,1);//使用splice方发去掉当前位置的日志
+      //deleteDiary.splice(objectIndex,1);//使用splice方发去掉当前位置的日志
+      console.log(objectIndex);
       console.log(deleteDiary);
+
+      const db = wx.cloud.database();      
+      db.collection('diary').doc(deleteDiary).remove({
+        success: function(res) {
+          db.collection('diary').get({
+            success: function(res) {
+              // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
+              console.log(res.data)
+              that.setData({
+                newdiarys:res.data
+              });
+            }
+          })
+          if(that.data.newdiarys.length>0){
+            that.setData({
+              display:true  
+            });
+          }
+        }
+      })
       
-      wx.setStorage({
+      
+     /* wx.setStorage({
         key: 'info',
         data: deleteDiary,
         success:function(res){
@@ -86,13 +103,8 @@ Page({
               });
             }
           });
-          if(that.data.newdiarys.length>0){
-            that.setData({
-              display:true  
-            });
-          }
         },
-    });
+    });*/
   },
 
 //搜索区域

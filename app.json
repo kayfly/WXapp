@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/Hello/index",
     "pages/main/main",
@@ -9,12 +9,12 @@
     "booklist/detail/detail",
     "pages/heatmap/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "backgroundColor": "#34C6CD",
     "navigationBarBackgroundColor": "#34C6CD",
     "navigationBarTitleText": "河上一周",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#bfbfbf",
@@ -41,6 +41,7 @@
         "text": "书海拾遗"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
 

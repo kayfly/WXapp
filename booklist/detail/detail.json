@@ -1,3 +1,6 @@
 {
+	"usingComponents": {
+		"wemark": "../../wemark/wemark"
+	},
 	"navigationBarTitleText": "文章详情"
 }

@@ -1,5 +1,6 @@
 {
 	"description": "项目配置文件。",
+	"cloudfunctionRoot": "cloudfunctions/",
 	"packOptions": {
 		"ignore": []
 	},
@@ -11,10 +12,12 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.2",
+	"libVersion": "2.10.3",
 	"appid": "wxdfbc17d9f86fa923",
 	"projectname": "%E6%B2%B3%E4%B8%8A%E4%B8%80%E5%91%A8",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

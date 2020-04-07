@@ -1,4 +1,3 @@
-var Bmob = require('../../utils/bmob.js');
 var that;
 Page({
 	data: {
@@ -11,48 +10,33 @@ Page({
 		that.loadArticle();
 	},
 	loadArticle: function () {
-		var page_size = 10;
-		var Article = Bmob.Object.extend("article");
-		var query = new Bmob.Query(Article);
-		// 按照priority逆序排列
-		query.descending('priority');
-		// 分页
-		query.limit(page_size);
-		query.skip(that.data.page_index * page_size);
-		// 查询所有数据
-		query.find({
-			success: function(results) {
-				// 请求成功将数据存入article_list
-				that.setData({
-					article_list: that.data.article_list.concat(results)
-				});
-				// 判断上拉加载状态
-	        	if (results.length < page_size) {
-	        		that.setData({
-	        			loadingTip: '没有更多内容'
-	        		});
-	        	}
-			},
-			error: function(error) {
-				console.log("查询失败: " + error.code + " " + error.message);
+		const db = wx.cloud.database();	
+		db.collection('chatroom').get({
+			success: function(res) {
+			  // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
+			  console.log(res.data)
+			  that.setData({
+							article_list: that.data.article_list.concat(res.data)
+						});
+						
+				console.log(res.data.length)
 			}
-		});
-	},
+		  });
+		},
+	
 	showDetail: function (e) {
 		// 获取wxml元素绑定的index值
 		var index = e.currentTarget.dataset.index;
-		console.log( e.currentTarget.dataset)
+		console.log(index);
+		console.log(e.currentTarget.dataset)
 		// 取出objectId
-		var objectId = that.data.article_list[index].id;
+		var objectId = that.data.article_list[index]._id;
+		console.log(objectId);
 		// 跳转到详情页
 		wx.navigateTo({
 			url: '../detail/detail?objectId=' + objectId
 		});
 	},
 	onReachBottom: function () {
-		that.setData({
-			page_index: ++that.data.page_index
-		});
-		that.loadArticle();
 	}
 });
