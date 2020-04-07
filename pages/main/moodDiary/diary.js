@@ -82,7 +82,7 @@ Page({
       show5:false,
       show6:false,
       activeIndex: 1,
-      moodpic: '../../../images/mood1.png'
+      moodpic: 'cloud://qcampus-2020.7163-qcampus-2020-1301774162/images/mood1.png'
     })
   },
   pic2: function(e) {
@@ -94,7 +94,7 @@ Page({
       show5:false,
       show6:false,
       activeIndex:2,
-      moodpic: '../../../images/mood2.png'
+      moodpic: 'cloud://qcampus-2020.7163-qcampus-2020-1301774162/images/mood2.png'
     })
   },
   pic3: function(e) {
@@ -106,7 +106,7 @@ Page({
       show5:false,
       show6:false,
       activeIndex:3,
-      moodpic: '../../../images/mood3.png'
+      moodpic: 'cloud://qcampus-2020.7163-qcampus-2020-1301774162/images/mood3.png'
     })
   },
   pic4: function(e) {
@@ -118,7 +118,7 @@ Page({
       show5:false,
       show6:false,
       activeIndex:4,
-      moodpic: '../../../images/mood4.png'
+      moodpic: 'cloud://qcampus-2020.7163-qcampus-2020-1301774162/images/mood4.png'
     })
   },
   pic5: function(e) {
@@ -130,7 +130,7 @@ Page({
       show1:false,
       show6:false,
       activeIndex:5,
-      moodpic: '../../../images/mood5.png'
+      moodpic: 'cloud://qcampus-2020.7163-qcampus-2020-1301774162/images/mood5.png'
     })
   },
   pic6: function(e) {
@@ -142,7 +142,7 @@ Page({
       show5:false,
       show1:false,
       activeIndex:6,
-      moodpic: '../../../images/mood6.png'
+      moodpic: 'cloud://qcampus-2020.7163-qcampus-2020-1301774162/images/mood6.png'
     })
   },
   /**
@@ -343,6 +343,11 @@ Page({
         data: {
           // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
           info: this.data.info,
+          diarytitle: this.data.diarytitle,
+          moodpic: this.data.moodpic,
+          type: this.data.type,
+          rhesis: this.data.rhesis,
+          diaryTime: this.data.diaryTime,
         },
         success: function(res) {
           wx.switchTab({

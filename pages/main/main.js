@@ -2,9 +2,6 @@ const app = getApp()
 var that;
 Page({
   data: {
-    diarytitle:'',
-    rhesis:'',
-    moodpic: 'cloud://qcampus-2020.7163-qcampus-2020-1301774162/images/mood1.png',
     diarys:[],
     newdiarys:[],
     resultShow:[],
@@ -24,12 +21,17 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     var that = this;
     const db = wx.cloud.database()
     db.collection('diary').get({
       success: function(res) {
         // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
-        console.log(res.data)
         that.setData({
           newdiarys: res.data,
         });
@@ -50,18 +52,13 @@ Page({
       });
     }
   },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  },
 
 /*
 删除日志的操作要注意，我们修改的数据不会马上渲染到页面，需要调用一下setDate()方发才能立即生效
 */
     deleteDiary: function (e) {
       var that = this;
-      console.log(e.currentTarget.dataset.index)
+      console.log(e.currentTarget.dataset)
       console.log(e)
       var objectIndex = e.currentTarget.dataset.index;
       var deleteDiary = e.currentTarget.dataset.array[objectIndex]._id;
